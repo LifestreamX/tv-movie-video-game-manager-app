@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-icon:hover{
+  transform: rotate(45deg);
+  transition: all 0.25s ease-in-out;
+}
