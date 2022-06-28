@@ -2,11 +2,14 @@ import React, { useEffect } from 'react';
 import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 
 const TvList = ({ tvListItem, setTvListItem }) => {
-
+  
   // Handle Delete on Click
   const handleTvShowDelete = (id) => {
-    setTvListItem(tvListItem.filter((tv) => tv.id !== id));
+    const newTv = tvListItem.filter((list) => list.id !== id);
+    console.log(newTv)
+    setTvListItem(newTv);
   };
+
 
   return (
     <div className=' tv-list-wrapper d-flex justify-content-center  '>
@@ -23,14 +26,17 @@ const TvList = ({ tvListItem, setTvListItem }) => {
           </thead>
           <tbody className='text-center'>
             {tvListItem?.map((list) => (
-              <tr className='fs-4 fw-bold' id={list?.id}>
+              <tr className='fs-4 fw-bold' key={list?.id}>
                 <td>{list?.show}</td>
                 <td>{list?.year}</td>
                 <td>{list?.numberOfSeasons}</td>
                 <td>{list?.myCurrentSeason}</td>
                 <td>{list?.myCurrentEpisode}</td>
                 <div>
-                  <Button variant='danger' onClick={handleTvShowDelete}>
+                  <Button
+                    variant='danger'
+                    onClick={() => handleTvShowDelete(list?.id)}
+                  >
                     Delete
                   </Button>
                 </div>

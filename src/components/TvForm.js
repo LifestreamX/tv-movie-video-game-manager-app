@@ -41,7 +41,6 @@ const TvForm = ({
   };
   const handleNumberOfSeasonsChange = (e) => {
     setNumberOfSeasons(e.target.value);
-    console.log(numberOfSeasons)
   };
   const handleCurrentSeasonChange = (e) => {
     setMyCurrentSeason(e.target.value);

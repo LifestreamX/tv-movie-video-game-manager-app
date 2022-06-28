@@ -22,7 +22,6 @@ function App() {
 
   const [tvListItem, setTvListItem] = useState([]);
 
-
   return (
     <Routes location={location} key={location.pathname}>
       <Route path='' element={<Layout />}>
@@ -38,6 +37,7 @@ function App() {
               myCurrentSeason={myCurrentSeason}
               myCurrentEpisode={myCurrentEpisode}
               tvListItem={tvListItem}
+              setTvListItem={setTvListItem}
             />
           }
         />
