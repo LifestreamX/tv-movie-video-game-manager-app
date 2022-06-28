@@ -4,7 +4,7 @@
 - Bootstrap Icons
 - react-router-bootstrap
 - uuid
-
+- store2
 
 
 

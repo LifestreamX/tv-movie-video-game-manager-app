@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './layout/Layout';
 import HomePage from './pages/HomePage';
@@ -20,7 +20,8 @@ function App() {
   const [myCurrentSeason, setMyCurrentSeason] = useState('');
   const [myCurrentEpisode, setMyCurrentEpisoide] = useState('');
 
-  const [tvListItem, setTvListItem] = useState();
+  const [tvListItem, setTvListItem] = useState([]);
+
 
   return (
     <Routes location={location} key={location.pathname}>

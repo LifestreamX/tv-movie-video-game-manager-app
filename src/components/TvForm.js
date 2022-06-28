@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import { AiFillPlusCircle } from 'react-icons/ai';
@@ -15,28 +15,22 @@ const TvForm = ({
   setMyCurrentSeason,
   myCurrentEpisode,
   setMyCurrentEpisoide,
-  tvListItem,
   setTvListItem,
+  tvListItem,
 }) => {
+  // Get from local storage
+  // useEffect(() => {
+  //   JSON.parse(localStorage.getItem('tv-local'));
+  // }, []);
+
   let navigate = useNavigate();
 
-  const { error, setError } = useState('');
-  let [random, setRandom] = useState();
+  let inputRef = useRef(null);
 
-  // Setting Local Storage
-  // useEffect(() => {
-  //   window.localStorage.setItem(tvListItem.show, JSON.stringify(tvListItem));
-  // }, [tvListItem]);
-
-  // useEffect(() => {
-  //   JSON.parse(window.localStorage.getItem(tvListItem.show));
-  // }, []);
-
-  // useEffect(() => {
-  //   setRandom(Math.random());
-  // }, []);
-
-  // console.log(random);
+  // Focus first form input on page load
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   // Setting the input to the proper state
   const handleShowChange = (e) => {
@@ -47,6 +41,7 @@ const TvForm = ({
   };
   const handleNumberOfSeasonsChange = (e) => {
     setNumberOfSeasons(e.target.value);
+    console.log(numberOfSeasons)
   };
   const handleCurrentSeasonChange = (e) => {
     setMyCurrentSeason(e.target.value);
@@ -55,47 +50,32 @@ const TvForm = ({
     setMyCurrentEpisoide(e.target.value);
   };
 
-  // Loading all data for Local storage
-  // useEffect(() => {
-  //   setTvListItem({
-
-  //   });
-  // }, []);
-
   // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    const values = [
-      show,
-      year,
-      numberOfSeasons,
-      myCurrentSeason,
-      myCurrentEpisode,
-    ];
 
-    const fieldsFilled = values.every((field) => {
-      const value = `${field}`.trim();
-      return value !== '' && value !== '0';
-    });
+    const ListItem = {
+      id: uuidv4(),
+      show: show,
+      year: year,
+      numberOfSeasons: numberOfSeasons,
+      myCurrentSeason: myCurrentSeason,
+      myCurrentEpisode: myCurrentEpisode,
+    };
 
-    if (fieldsFilled) {
-      const ListItem = {
-        id: uuidv4(),
-        show,
-        year,
-        numberOfSeasons,
-        myCurrentSeason,
-        myCurrentEpisode,
-      };
-      // Local Storage
-      window.localStorage.setItem(ListItem.show, JSON.stringify(ListItem));
-      JSON.parse(window.localStorage.getItem(ListItem.show));
+    // console.log(ListItem);
 
-      setTvListItem(ListItem)
-    }
+    const newTv = [...tvListItem, ListItem];
+    setTvListItem(newTv);
+    // console.log(tvListItem);
 
+    // Local Storage
+    // localStorage.setItem('tv-local', JSON.stringify(tvListItem));
+
+    // Navigates to the tv list after new one is created
     navigate('/tv-list');
 
+    // Reset values after form submitt
     setShow('');
     setYear('');
     setNumberOfSeasons('');
@@ -126,6 +106,7 @@ const TvForm = ({
                   value={show}
                   onChange={handleShowChange}
                   required
+                  ref={inputRef}
                 />
               </Form.Group>
               <Form.Group className='mb-4' controlId='formBasicEmail'>
