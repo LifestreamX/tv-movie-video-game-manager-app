@@ -11,7 +11,7 @@ export default function Navigation() {
   const toggleHover = () => setHovered(!hovered);
 
   return (
-    <Navbar bg='dark' expand='lg' variant='dark'>
+    <Navbar bg='dark' expand='lg' variant='dark' className='navigation'>
       <Container className='d-flex justify-content-between p-3'>
         <LinkContainer to='/'>
           <Navbar.Brand href='#home'>
@@ -24,7 +24,7 @@ export default function Navigation() {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto d-flex justify-content-evenly w-100'>
             <LinkContainer to='tv-list'>
-              <Nav.Link className='fs-3'>Tv List</Nav.Link>
+              <Nav.Link className='fs-3'>TV List</Nav.Link>
             </LinkContainer>
 
             <LinkContainer to='movie-list '>

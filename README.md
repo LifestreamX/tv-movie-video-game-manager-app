@@ -3,6 +3,7 @@
 - React-Router 
 - Bootstrap Icons
 - react-router-bootstrap
+- uuid
 
 
 
