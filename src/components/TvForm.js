@@ -21,6 +21,22 @@ const TvForm = ({
   let navigate = useNavigate();
 
   const { error, setError } = useState('');
+  let [random, setRandom] = useState();
+
+  // Setting Local Storage
+  // useEffect(() => {
+  //   window.localStorage.setItem(tvListItem.show, JSON.stringify(tvListItem));
+  // }, [tvListItem]);
+
+  // useEffect(() => {
+  //   JSON.parse(window.localStorage.getItem(tvListItem.show));
+  // }, []);
+
+  // useEffect(() => {
+  //   setRandom(Math.random());
+  // }, []);
+
+  // console.log(random);
 
   // Setting the input to the proper state
   const handleShowChange = (e) => {
@@ -40,11 +56,11 @@ const TvForm = ({
   };
 
   // Loading all data for Local storage
-  useEffect(() => {
-    setTvListItem({
-      id: uuidv4(),
-    });
-  }, []);
+  // useEffect(() => {
+  //   setTvListItem({
+
+  //   });
+  // }, []);
 
   // Handle form submit
   const handleSubmit = (e) => {
@@ -63,19 +79,19 @@ const TvForm = ({
     });
 
     if (fieldsFilled) {
-      setTvListItem({
+      const ListItem = {
         id: uuidv4(),
         show,
         year,
         numberOfSeasons,
         myCurrentSeason,
         myCurrentEpisode,
-      });
+      };
+      // Local Storage
+      window.localStorage.setItem(ListItem.show, JSON.stringify(ListItem));
+      JSON.parse(window.localStorage.getItem(ListItem.show));
 
-      // Setting Local Storage
-
-      window.localStorage.setItem(tvListItem.id, JSON.stringify(tvListItem));
-      JSON.parse(window.localStorage.getItem(tvListItem.id));
+      setTvListItem(ListItem)
     }
 
     navigate('/tv-list');
