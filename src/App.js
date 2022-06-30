@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './layout/Layout';
 import HomePage from './pages/HomePage';
 import MovieList from './pages/MovieList';
@@ -10,6 +10,7 @@ import VideoGameList from './pages/VideoGameList';
 import AddTVShow from './pages/AddTVShow';
 import AddMovie from './pages/AddMovie';
 import AddVideoGame from './pages/AddVideoGame';
+// import EditTvShow from './pages/EditTvShow';
 
 function App() {
   const location = useLocation();
@@ -38,9 +39,13 @@ function App() {
               myCurrentEpisode={myCurrentEpisode}
               tvListItem={tvListItem}
               setTvListItem={setTvListItem}
+              setShow={setShow}
             />
           }
         />
+        {/* <Route path='/edit/:id' element={<EditTvShow />} /> */}
+        <Route element={() => <Navigate to='/' />} />
+
         <Route path='video-game-list' element={<VideoGameList />} />
         <Route
           path='add-tv-show'

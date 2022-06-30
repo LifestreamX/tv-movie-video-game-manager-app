@@ -1,15 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row, Table } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
+import MyVerticallyCenteredModal, {
+  EditButton,
+} from '../components/EditTvModal';
 
-const TvList = ({ tvListItem, setTvListItem }) => {
-  
-  // Handle Delete on Click
+const TvList = ({ tvListItem, setTvListItem, setShow }) => {
+  // Handle delete on Click
   const handleTvShowDelete = (id) => {
     const newTv = tvListItem.filter((list) => list.id !== id);
-    console.log(newTv)
-    setTvListItem(newTv);
   };
 
+  let navigate = useNavigate();
+
+  const { id } = useParams();
+
+  // Handle Edit on click
+  const handleEdit = (id) => {
+    const editLink = tvListItem.filter((list) => list.id === id);
+    console.log(editLink[0].show);
+  };
 
   return (
     <div className=' tv-list-wrapper d-flex justify-content-center  '>
@@ -32,18 +42,25 @@ const TvList = ({ tvListItem, setTvListItem }) => {
                 <td>{list?.numberOfSeasons}</td>
                 <td>{list?.myCurrentSeason}</td>
                 <td>{list?.myCurrentEpisode}</td>
-                <div>
-                  <Button
-                    variant='danger'
-                    onClick={() => handleTvShowDelete(list?.id)}
-                  >
-                    Delete
-                  </Button>
+                <div className='d-flex justify-content-around'>
+                  <div>
+                    <EditButton onClick={() => handleEdit(list.id)} />
+                  </div>
+                  <div>
+                    <Button
+                      variant='danger'
+                      onClick={() => handleTvShowDelete(list?.id)}
+                    >
+                      Delete
+                    </Button>
+                  </div>
                 </div>
               </tr>
             ))}
           </tbody>
         </Table>
+        
+        <MyVerticallyCenteredModal />
       </Container>
     </div>
   );

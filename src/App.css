@@ -327,11 +327,14 @@ input {
   height: 100vh !important;
   overflow-x: hidden;
   background: radial-gradient(#610e0e, #1f1013) !important;
-  
 }
 
-.tv-container{
+.tv-container {
   z-index: 2;
 }
 
-
+/* Edit tv-list-modal */
+.edit-modal-header {
+  position: relative;
+  left: 35%;
+}
