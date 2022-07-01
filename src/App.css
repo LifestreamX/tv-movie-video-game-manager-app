@@ -333,8 +333,16 @@ input {
   z-index: 2;
 }
 
-/* Edit tv-list-modal */
-.edit-modal-header {
-  position: relative;
-  left: 35%;
+/* Edit TV */
+
+.edit-input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-input {
+  width: 160px;
+  height: 30px;
+  font-size: 18px !important;
 }

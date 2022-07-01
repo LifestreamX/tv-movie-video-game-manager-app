@@ -147,7 +147,7 @@ const TvForm = ({
                 />
               </Form.Group>
               <Button
-                variant='danger'
+                variant='primary'
                 type='submit'
                 className='w-25 button-wrapper'
               >

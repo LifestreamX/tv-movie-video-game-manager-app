@@ -10,7 +10,6 @@ import VideoGameList from './pages/VideoGameList';
 import AddTVShow from './pages/AddTVShow';
 import AddMovie from './pages/AddMovie';
 import AddVideoGame from './pages/AddVideoGame';
-// import EditTvShow from './pages/EditTvShow';
 
 function App() {
   const location = useLocation();
@@ -43,7 +42,9 @@ function App() {
             />
           }
         />
-        {/* <Route path='/edit/:id' element={<EditTvShow />} /> */}
+
+     
+
         <Route element={() => <Navigate to='/' />} />
 
         <Route path='video-game-list' element={<VideoGameList />} />
