@@ -335,14 +335,34 @@ input {
 
 /* Edit TV */
 
+Table {
+  border: 1px solid #ffffff !important;
+}
+
 .edit-input-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .edit-input {
-  width: 160px;
-  height: 30px;
-  font-size: 18px !important;
+  width: 200px;
+  font-size: 24px !important;
+  height: 50px;
 }
+
+td {
+  padding-top: 18px !important;
+}
+
+.edit-save-delete-wrapper {
+  padding: 10px !important;
+  display: flex !important;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/* Button{
+  height: 20px !important;
+} */

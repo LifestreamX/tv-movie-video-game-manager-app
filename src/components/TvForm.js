@@ -103,7 +103,6 @@ const TvForm = ({
               <Form.Group className='mb-4' controlId='formBasicEmail'>
                 <Form.Label>Show</Form.Label>
                 <Form.Control
-                  type='text'
                   value={show}
                   onChange={handleShowChange}
                   required
@@ -114,7 +113,6 @@ const TvForm = ({
                 <Form.Label>Year</Form.Label>
                 <Form.Control
                   required
-                  type='number'
                   value={year}
                   onChange={handleYearChange}
                 />
@@ -123,7 +121,6 @@ const TvForm = ({
                 <Form.Label>Total Seasons</Form.Label>
                 <Form.Control
                   required
-                  type='number'
                   value={numberOfSeasons}
                   onChange={handleNumberOfSeasonsChange}
                 />
@@ -132,7 +129,6 @@ const TvForm = ({
                 <Form.Label>My Current Season</Form.Label>
                 <Form.Control
                   required
-                  type='number'
                   value={myCurrentSeason}
                   onChange={handleCurrentSeasonChange}
                 />
@@ -141,7 +137,6 @@ const TvForm = ({
                 <Form.Label>My Current Episode</Form.Label>
                 <Form.Control
                   required
-                  type='number'
                   value={myCurrentEpisode}
                   onChange={handleCurrentEpisodeChange}
                 />
