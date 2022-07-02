@@ -29,13 +29,17 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
   const [editEpisode, setEditEpisode] = useState();
 
   // Edit Logic for inputs
+  
+
+
+
   const editTvShow = (id) => {
     const updatedTvShow = [...tvListItem].map((list) => {
       if (list.id === id) {
         // Show
         if (list.show !== tvShowText && tvShowText?.length > 0) {
           list.show = tvShowText;
-        }
+        } 
         // year
         if (list.year !== editYear && editYear > 0) {
           list.year = editYear;
@@ -62,23 +66,28 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
 
       return list;
     });
-    setTvListItem(updatedTvShow);
-    setEditYear(updatedTvShow);
-    setEditNumOfSeasons(updatedTvShow);
-    setEditMyCurrentSeason(updatedTvShow);
-
+    
+    // setTvListItem(updatedTvShow);
+    // setEditYear(updatedTvShow);
+    // setEditNumOfSeasons(updatedTvShow);
+    // setEditMyCurrentSeason(updatedTvShow);
     setTvShowListEditingId(null);
-    setTvShowText('');
-    setEditYear('');
+    // setTvShowText('');
+    // setEditYear('');
   };
+
+  useEffect(() => {
+
+    
+  }, []);
 
   return (
     <div className=' tv-list-wrapper d-flex justify-content-center  '>
-      <Container className='mt-5 tv-container'>
+      <Container className='mt-5 tv-container '>
         <Table variant='dark' striped bordered hover>
           <thead className='fs-3 '>
             <tr className='text-center'>
-              <th className='w-25'>Show</th>
+              <th>Show</th>
               <th>Year</th>
               <th>Seasons</th>
               <th> Current Season</th>
@@ -91,13 +100,17 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
               <tr className='fs-4 fw-bold ' key={list?.id}>
                 {/* Show section */}
                 {tvShowListEditingID === list?.id ? (
-                  <td className='edit-input-wrapper'>
-                    <input
-                      className='edit-input '
-                      value={tvShowText}
-                      onChange={(e) => setTvShowText(e.target.value)}
-                      defaultValue={list.show}
-                    />
+                  <td>
+                    <span className='edit-input-wrapper'>
+                      <input
+                        type='text'
+                        className='edit-input '
+                        value={tvShowText}
+                        onChange={(e) => setTvShowText(e.target.value)}
+                        defaultValue={list?.show}
+                      />
+                    </span>
+                    {console.log(list)}
                   </td>
                 ) : (
                   <td>{list?.show}</td>
@@ -108,9 +121,11 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                   <td>
                     <span className='edit-input-wrapper'>
                       <input
+                        type='number'
+                        className='edit-input '
                         value={editYear}
                         onChange={(e) => setEditYear(e.target.value)}
-                        defaultValue={list.year}
+                        defaultValue={list?.year}
                       />
                     </span>
                   </td>
@@ -123,9 +138,11 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                   <td>
                     <span className='edit-input-wrapper'>
                       <input
+                        type='number'
+                        className='edit-input '
                         value={editNumOfSeason}
                         onChange={(e) => setEditNumOfSeasons(e.target.value)}
-                        defaultValue={list.numberOfSeasons}
+                        defaultValue={list?.numberOfSeasons}
                       />
                     </span>
                   </td>
@@ -138,9 +155,11 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                   <td>
                     <span className='edit-input-wrapper'>
                       <input
+                        type='number'
+                        className='edit-input '
                         value={editMyCurrentSeason}
                         onChange={(e) => setEditMyCurrentSeason(e.target.value)}
-                        defaultValue={list.myCurrentSeason}
+                        defaultValue={list?.myCurrentSeason}
                       />
                     </span>
                   </td>
@@ -154,6 +173,8 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                   <td>
                     <span className='edit-input-wrapper'>
                       <input
+                        type='number'
+                        className='edit-input '
                         value={editEpisode}
                         onChange={(e) => setEditEpisode(e.target.value)}
                         defaultValue={list.myCurrentEpisode}
@@ -183,7 +204,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
 
                     {/* Save Edited information Button */}
 
-                    {saveButton ? (
+                    {saveButton && tvShowListEditingID === list?.id  ? (
                       <Button
                         variant='primary'
                         onClick={() => {

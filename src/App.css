@@ -331,6 +331,7 @@ input {
 
 .tv-container {
   z-index: 2;
+  /* width: 70%; */
 }
 
 /* Edit TV */
@@ -339,17 +340,17 @@ Table {
   border: 1px solid #ffffff !important;
 }
 
-.edit-input-wrapper {
+/* .edit-input-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-}
+} */
 
 .edit-input {
-  width: 200px;
-  font-size: 24px !important;
-  height: 50px;
+  width: 150px;
+  font-size: 16px !important;
+  height: 40px;
 }
 
 td {
