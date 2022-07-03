@@ -4,8 +4,8 @@ import MovieForm from '../components/MovieForm';
 const AddMovie = ({
   movie,
   setMovie,
-  movieYear,
-  setMovieYear,
+  movieReleaseDate,
+  setMovieReleaseDate,
   movieListItem,
   setMovieListItem,
 }) => {
@@ -14,8 +14,8 @@ const AddMovie = ({
       <MovieForm
         movie={movie}
         setMovie={setMovie}
-        movieYear={movieYear}
-        setMovieYear={setMovieYear}
+        movieReleaseDate={movieReleaseDate}
+        setMovieReleaseDate={setMovieReleaseDate}
         movieListItem={movieListItem}
         setMovieListItem={setMovieListItem}
       />

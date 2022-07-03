@@ -25,7 +25,7 @@ function App() {
   // Movie
   const [movieListItem, setMovieListItem] = useState([]);
   const [movie, setMovie] = useState('');
-  const [movieYear, setMovieYear] = useState('');
+  const [movieReleaseDate, setMovieReleaseDate] = useState('');
 
   return (
     <Routes location={location} key={location.pathname}>
@@ -75,14 +75,22 @@ function App() {
             <AddMovie
               movie={movie}
               setMovie={setMovie}
-              movieYear={movieYear}
-              setMovieYear={setMovieYear}
+              movieReleaseDate={movieReleaseDate}
+              setMovieReleaseDate={setMovieReleaseDate}
               movieListItem={movieListItem}
               setMovieListItem={setMovieListItem}
             />
           }
         />
-        <Route path='movie-list' element={<MovieList />} />
+        <Route
+          path='movie-list'
+          element={
+            <MovieList
+              movieListItem={movieListItem}
+              setMovieListItem={setMovieListItem}
+            />
+          }
+        />
 
         {/* <Route element={() => <Navigate to='/' />} /> */}
 

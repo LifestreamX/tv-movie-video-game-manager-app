@@ -350,7 +350,7 @@ td {
   padding-top: 18px !important;
 }
 
-.edit-save-delete-wrapper {
+.tv-edit-save-delete-wrapper {
   padding: 10px !important;
   display: flex !important;
   width: 100%;
@@ -369,3 +369,34 @@ td {
   margin-top: 20px !important;
 }
 
+/* Movie List */
+.movie-list-wrapper {
+  background: radial-gradient(#0053e2, #1f1013) !important;
+  height: 100vh !important;
+  overflow-x: hidden;
+}
+
+.movie-edit-save-delete-wrapper {
+  padding: 10px !important;
+  display: flex !important;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.movie-edit-and-save-button {
+  margin-right: 10px !important;
+}
+
+
+
+/* if no items are in any of the list */
+.no-list-title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.no-list-title {
+  font-size: 5rem;
+}
