@@ -18,10 +18,7 @@ const TvForm = ({
   setTvListItem,
   tvListItem,
 }) => {
-  // Get from local storage
-  // useEffect(() => {
-  //   JSON.parse(localStorage.getItem('tv-local'));
-  // }, []);
+
 
   let navigate = useNavigate();
 
@@ -64,16 +61,10 @@ const TvForm = ({
 
     
 
-    // console.log(ListItem);
 
     const newTv = [...tvListItem, ListItem];
     setTvListItem(newTv);
-    // console.log(tvListItem);
 
-    // Local Storage
-    // localStorage.setItem('tv-local', JSON.stringify(tvListItem));
-
-    // Navigates to the tv list after new one is created
     navigate('/tv-list');
 
     // Reset values after form submitt

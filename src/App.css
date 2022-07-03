@@ -340,13 +340,6 @@ Table {
   border: 1px solid #ffffff !important;
 }
 
-/* .edit-input-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-} */
-
 .edit-input {
   width: 150px;
   font-size: 16px !important;
@@ -364,6 +357,15 @@ td {
   justify-content: space-around;
 }
 
-/* Button{
-  height: 20px !important;
-} */
+/* Add movie page */
+
+.add-movie-wrapper {
+  background: radial-gradient(#0053e2, #1f1013) !important;
+  height: 100vh;
+}
+
+.movie-button-wrapper {
+  outline: 1px solid white !important;
+  margin-top: 20px !important;
+}
+
