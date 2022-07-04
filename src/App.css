@@ -306,6 +306,8 @@ input::-webkit-inner-spin-button {
 .button-wrapper {
   position: relative;
   top: 25px;
+  outline: 1px solid white !important;
+
 }
 
 label {
@@ -387,8 +389,6 @@ td {
   margin-right: 10px !important;
 }
 
-
-
 /* if no items are in any of the list */
 .no-list-title-wrapper {
   display: flex;
@@ -399,4 +399,11 @@ td {
 
 .no-list-title {
   font-size: 5rem;
+}
+
+/* Video game section */
+
+/* AddVideoGame */
+.add-movie-wrapper {
+  background: radial-gradient(#23781e, #1f1013) !important;
 }

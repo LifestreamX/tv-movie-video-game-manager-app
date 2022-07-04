@@ -27,11 +27,16 @@ function App() {
   const [movie, setMovie] = useState('');
   const [movieReleaseDate, setMovieReleaseDate] = useState('');
 
+  // Video game
+  const [videoGameList, setVideoGameList] = useState([]);
+  const [videoGame, setVideoGame] = useState();
+  const [videoGameReleaseDate, setVideoGameReleaseDate] = useState('');
+  const [videoGamePlatform, setVideoGamePlatform] = useState('');
+
   return (
     <Routes location={location} key={location.pathname}>
       <Route path='' element={<Layout />}>
         <Route index element={<HomePage />} />
-
         {/* TV routes */}
         <Route
           path='add-tv-show'
@@ -67,7 +72,6 @@ function App() {
             />
           }
         />
-
         {/* Movie routes */}
         <Route
           path='add-movie'
@@ -92,11 +96,24 @@ function App() {
           }
         />
 
-        {/* <Route element={() => <Navigate to='/' />} /> */}
-
+        {/* Videogame routes */}
+        <Route
+          path='add-video-game'
+          element={
+            <AddVideoGame
+              videoGameList={videoGameList}
+              setVideoGameList={setVideoGameList}
+              videoGame={videoGame}
+              setVideoGame={setVideoGame}
+              videoGameReleaseDate={videoGameReleaseDate}
+              setVideoGameReleaseDate={setVideoGameReleaseDate}
+              videoGamePlatform={videoGamePlatform}
+              setVideoGamePlatform={setVideoGamePlatform}
+            />
+          }
+        />
         <Route path='video-game-list' element={<VideoGameList />} />
-
-        <Route path='add-video-game' element={<AddVideoGame />} />
+        {/* <Route element={() => <Navigate to='/' />} /> */}
       </Route>
     </Routes>
   );
