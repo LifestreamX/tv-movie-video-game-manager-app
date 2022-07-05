@@ -5,10 +5,23 @@
   padding: 0;
 }
 
+html {
+  height: 100% !important;
+}
+
+#root {
+  height: 100% !important;
+}
+
 body {
-  height: 100vh;
+  height: 100%;
   font-family: 'Audiowide', cursive;
   font-family: 'Roboto', sans-serif;
+}
+
+.layout {
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Remove input number arrows */
@@ -21,6 +34,7 @@ input::-webkit-inner-spin-button {
 /* Nav Bar */
 .navigation {
   z-index: 5;
+  position: sticky;
 }
 
 .nav-icon:hover {
@@ -30,7 +44,8 @@ input::-webkit-inner-spin-button {
 
 /* Layout  */
 .layout-wrapper {
-  height: 91.6vh !important;
+  overflow-y: scroll;
+  height: 100%;
   margin: 0;
   font-weight: 100;
   background: radial-gradient(#393ca2, #1f1013);
@@ -250,6 +265,10 @@ input::-webkit-inner-spin-button {
 
 /* Home page */
 
+.home-wrapper {
+  height: 100% !important;
+}
+
 .title {
   font-size: 6rem;
   font-weight: 800;
@@ -325,7 +344,7 @@ input {
 
 /* Tv Page */
 .tv-list-wrapper {
-  height: 100vh !important;
+  height: 100% !important;
   overflow-x: hidden;
   background: radial-gradient(#610e0e, #1f1013) !important;
 }
@@ -373,7 +392,7 @@ td {
 /* Movie List */
 .movie-list-wrapper {
   background: radial-gradient(#0053e2, #1f1013) !important;
-  height: 100vh !important;
+  height: 100% !important;
   overflow-x: hidden;
 }
 
@@ -412,7 +431,7 @@ td {
 
 .video-game-list-wrapper {
   background: radial-gradient(#23781e, #1f1013) !important;
-  height: 100vh !important;
+  height: 100% !important;
 }
 
 .video-game-table-data {
@@ -427,4 +446,79 @@ td {
 .video-game-edit-input {
   position: relative;
   bottom: 5px !important;
+}
+
+/* Responsive  */
+@media screen and (max-width: 576px) {
+  .layout {
+    overflow-y: scroll;
+  }
+
+  .navigation {
+  }
+
+  .home-wrapper {
+    position: relative;
+    /* top: 100px !important; */
+  }
+
+  /* Home Screen */
+  .title {
+    font-size: 2rem;
+    bottom: -15px;
+  }
+
+  .title-subheading {
+    font-size: 2rem;
+    bottom: 0px;
+  }
+
+  .card-wrapper {
+    width: 50vw !important;
+    position: relative;
+    top: 0px;
+  }
+
+  .card {
+    margin-bottom: 40px !important;
+  }
+
+  .arrow-icon {
+    width: 45px !important;
+  }
+
+  .card-title {
+    font-size: 18px !important;
+  }
+
+  /* Tv List */
+
+  .tv-list-wrapper {
+  }
+
+  .no-list-title {
+    font-size: 30px !important;
+  }
+
+  .tv-edit-save-delete-wrapper {
+    flex-direction: column;
+  }
+
+  th {
+    font-size: 18px !important;
+  }
+
+  td {
+    font-size: 18px !important;
+  }
+
+  .edit-button {
+    position: relative;
+    top: -8px !important;
+  }
+
+  .save-button {
+    position: relative;
+    top: -8px !important;
+  }
 }

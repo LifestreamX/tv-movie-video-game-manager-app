@@ -71,7 +71,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
     <div className=' tv-list-wrapper d-flex justify-content-center  '>
       <Container className='mt-5 tv-container '>
         {tvListItem.length > 0 ? (
-          <Table variant='dark' striped bordered hover>
+          <Table variant='dark' striped bordered hover responsive>
             <thead className='fs-3 '>
               <tr className='text-center'>
                 <th>Show</th>
@@ -181,6 +181,8 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                     <div className='tv-edit-save-delete-wrapper'>
                       {editButton ? (
                         <Button
+                        className='edit-button'
+
                           variant='secondary'
                           onClick={() => {
                             setTvShowListEditingId(list?.id);
@@ -196,6 +198,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
 
                       {saveButton && tvShowListEditingID === list?.id ? (
                         <Button
+                          className='save-button'
                           variant='primary'
                           onClick={() => {
                             editTvShow(list.id);
@@ -226,7 +229,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
         ) : (
           <div className='no-list-title-wrapper'>
             <Alert variant='danger'>
-              <h1 className='no-list-title'>NO TV SHOWS IN YOUR</h1>
+              <h1 className='no-list-title'>NO TV SHOWS IN YOUR LIST</h1>
             </Alert>
           </div>
         )}

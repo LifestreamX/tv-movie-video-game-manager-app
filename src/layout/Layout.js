@@ -5,7 +5,7 @@ import '../App.css';
 
 const Layout = () => {
   return (
-    <div>
+    <div className='layout'>
       <Nav />
       <div className='layout-wrapper'>
         <div class='light x1'></div>

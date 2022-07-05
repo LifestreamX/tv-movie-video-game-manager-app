@@ -46,7 +46,7 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
     <div className=' movie-list-wrapper d-flex justify-content-center  '>
       <Container className='mt-5 tv-container '>
         {movieListItem.length > 0 ? (
-          <Table variant='dark' striped bordered hover>
+          <Table variant='dark' striped bordered hover responsive>
             <thead className='fs-3 '>
               <tr className='text-center'>
                 <th className='w-50'>Show</th>

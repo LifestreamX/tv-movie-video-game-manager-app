@@ -19,27 +19,31 @@ const HomePage = () => {
       <Row>
         <CardGroup className='text-dark '>
           {/* TV card */}
-          <Card className='mx-5 card-wrapper border border-dark'>
+          <Card className='mx-5 card-wrapper border border-dark card'>
             <Card.Img variant='top' src={TvShow} />
             <Card.Body className='d-flex justify-content-evenly align-items-center link-wrapper '>
               <Link to='tv-list'>
-                <Card.Title className='fs-1 card-title'>MY TV LIST</Card.Title>{' '}
+                <Card.Title className='fs-1 card-title'>
+                  <span className='card-title'>MY TV LIST</span>
+                </Card.Title>{' '}
               </Link>
 
               <Link to='tv-list'>
-                <BsFillArrowRightCircleFill size={70} />
+                <BsFillArrowRightCircleFill size={70} className='arrow-icon' />
               </Link>
             </Card.Body>
           </Card>
           {/* Movie card */}
-          <Card className='mx-5 card-wrapper border border-dark'>
+          <Card className='mx-5 card-wrapper border border-dark card'>
             <Card.Img variant='top' src={Movie} />
             <Card.Body className='d-flex justify-content-evenly align-items-center '>
               <Link to='movie-list'>
-                <Card.Title className='fs-1'>MY MOVIE LIST</Card.Title>
+                <Card.Title className='fs-1 '>
+                  <span className='card-title'>MY MOVIE LIST</span>
+                </Card.Title>
               </Link>
               <Link to='movie-list'>
-                <BsFillArrowRightCircleFill size={70} />
+                <BsFillArrowRightCircleFill size={70} className='arrow-icon' />
               </Link>
             </Card.Body>
           </Card>
@@ -48,10 +52,12 @@ const HomePage = () => {
             <Card.Img variant='top' src={VideoGame} />
             <Card.Body className='d-flex justify-content-evenly align-items-center '>
               <Link to='video-game-list'>
-                <Card.Title className='fs-1'>MY VIDEO GAME LIST</Card.Title>
+                <Card.Title className='fs-1 card-title'>
+                  <span className='card-title'>MY VIDEO GAME LIST</span>
+                </Card.Title>
               </Link>
               <Link to='video-game-list'>
-                <BsFillArrowRightCircleFill size={70} />
+                <BsFillArrowRightCircleFill size={70} className='arrow-icon' />
               </Link>
             </Card.Body>
           </Card>
