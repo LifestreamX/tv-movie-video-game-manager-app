@@ -12,7 +12,7 @@ const AddVideoGame = ({
   setVideoGamePlatform,
 }) => {
   return (
-    <div className='add-movie-wrapper'>
+    <div className='add-video-game-wrapper'>
       <VideoGameForm
         videoGameList={videoGameList}
         setVideoGameList={setVideoGameList}

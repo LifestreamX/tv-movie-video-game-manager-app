@@ -122,7 +122,6 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
                             editMovie(list.id);
                             setEditButton(true);
                             setSaveButton(false);
-                            console.log(saveButton);
                           }}
                         >
                           Save
@@ -145,7 +144,7 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
         ) : (
           <div className='no-list-title-wrapper'>
             <Alert variant='primary'>
-              <h1 className='no-list-title'>No Movies in your Movie List</h1>
+              <h1 className='no-list-title'>NO MOVIES IN YOUR LIST</h1>
             </Alert>
           </div>
         )}

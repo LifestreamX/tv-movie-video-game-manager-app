@@ -74,6 +74,8 @@ const TvForm = ({
     setMyCurrentEpisoide('');
     setMyCurrentSeason('');
     setMyCurrentEpisoide('');
+
+
   };
 
   return (

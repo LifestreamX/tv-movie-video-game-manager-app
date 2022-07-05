@@ -112,7 +112,15 @@ function App() {
             />
           }
         />
-        <Route path='video-game-list' element={<VideoGameList />} />
+        <Route
+          path='video-game-list'
+          element={
+            <VideoGameList
+              videoGameList={videoGameList}
+              setVideoGameList={setVideoGameList}
+            />
+          }
+        />
         {/* <Route element={() => <Navigate to='/' />} /> */}
       </Route>
     </Routes>

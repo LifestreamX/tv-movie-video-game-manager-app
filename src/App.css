@@ -307,7 +307,6 @@ input::-webkit-inner-spin-button {
   position: relative;
   top: 25px;
   outline: 1px solid white !important;
-
 }
 
 label {
@@ -404,6 +403,28 @@ td {
 /* Video game section */
 
 /* AddVideoGame */
-.add-movie-wrapper {
+.add-video-game-wrapper {
   background: radial-gradient(#23781e, #1f1013) !important;
+  height: 100vh !important;
+}
+
+/* Video game list  */
+
+.video-game-list-wrapper {
+  background: radial-gradient(#23781e, #1f1013) !important;
+  height: 100vh !important;
+}
+
+.video-game-table-data {
+  position: relative;
+  bottom: 6px;
+}
+
+.video-game-edit-save-buutton {
+  margin-right: 20px;
+}
+
+.video-game-edit-input {
+  position: relative;
+  bottom: 5px !important;
 }

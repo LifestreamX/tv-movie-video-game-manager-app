@@ -2,108 +2,149 @@ import React, { useEffect, useState } from 'react';
 import { Alert, Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const VideoGameList = ({ movieListItem, setMovieListItem }) => {
+const VideoGameList = ({ videoGameList, setVideoGameList }) => {
   const [editButton, setEditButton] = useState(true);
   const [saveButton, setSaveButton] = useState(false);
 
   // Handle delete on Click
-  const handleTvShowDelete = (id) => {
-    const newMovie = movieListItem.filter((list) => list.id !== id);
-    setMovieListItem(newMovie);
+  const handleVideoGameDelete = (id) => {
+    const newMovie = videoGameList.filter((list) => list.id !== id);
+    setVideoGameList(newMovie);
   };
 
   let navigate = useNavigate();
 
-  const [movieListEditingID, setMovieListEditingId] = useState(null);
-  // Editing for MOVIE
-  const [movieText, setMovieText] = useState();
-  // Editing for Release Date
-  const [movieReleaseDateText, setMovieReleaseDateText] = useState();
+  const [videoGameListId, setVideoGameListId] = useState(null);
+  // Editing for video game
+  const [videoGameText, setVideoGameText] = useState();
+  // Editing for video game release date
+  const [videoGameReleaseDateText, setVideoGameReleaseDateText] = useState();
+  // Editing for video game platform
+  const [videoGamePlatformText, setVideoGamePlatformText] = useState();
 
-  const editMovie = (id) => {
-    const updatedMovie = [...movieListItem].map((list) => {
+  const editVideoGame = (id) => {
+    const updatedVideoGame = [...videoGameList].map((list) => {
       if (list.id === id) {
-        // Movie
-        if (list.movie !== movieText && movieText?.length > 0) {
-          list.movie = movieText;
+        // video game
+        if (list.videoGame !== videoGameText && videoGameText?.length > 0) {
+          list.videoGame = videoGameText;
         }
-        // Movie release
+        // video game release date
         if (
-          list.movieReleaseDate !== movieReleaseDateText &&
-          movieReleaseDateText > 0
+          list.videoGameReleaseDate !== videoGameReleaseDateText &&
+          videoGameReleaseDateText > 0
         ) {
-          list.movieReleaseDate = movieReleaseDateText;
+          list.videoGameReleaseDate = videoGameReleaseDateText;
+        }
+        // video game platform
+        if (
+          list.videoGamePlatform !== videoGamePlatformText &&
+          videoGamePlatformText > 0
+        ) {
+          list.videoGamePlatform = videoGamePlatformText;
         }
       }
 
       return list;
     });
 
-    setMovieListEditingId(null);
+    setVideoGameListId(null);
   };
 
+  console.log(videoGameList);
+
   return (
-    <div className=' movie-list-wrapper d-flex justify-content-center  '>
+    <div className=' video-game-list-wrapper d-flex justify-content-center  '>
       <Container className='mt-5 tv-container '>
-        {movieListItem.length > 0 ? (
+        {videoGameList.length > 0 ? (
           <Table variant='dark' striped bordered hover>
             <thead className='fs-3 '>
               <tr className='text-center'>
-                <th className='w-50'>Show</th>
-                <th className='w-50'> Release Date</th>
-                <th className='w-25'></th>
+                <th className='w-25'>Video Game</th>
+                <th className='w-25'> Release Date</th>
+                <th className='w-25'> Platform</th>
+                <th className=''></th>
               </tr>
             </thead>
             <tbody className='text-center h-25'>
-              {movieListItem?.map((list) => (
+              {videoGameList?.map((list) => (
                 <tr className='fs-4 fw-bold ' key={list?.id}>
-                  {/* Movie section */}
-                  {movieListEditingID === list?.id ? (
+                  {/* video game section */}
+                  {videoGameListId === list?.id ? (
                     <td>
                       <span className='edit-input-wrapper'>
                         <input
                           type='text'
-                          className='edit-input '
-                          value={movieText}
-                          onChange={(e) => setMovieText(e.target.value)}
-                          defaultValue={list?.movie}
+                          className='video-game-edit-input edit-input'
+                          value={videoGameText}
+                          onChange={(e) => setVideoGameText(e.target.value)}
+                          defaultValue={list?.videoGame}
                         />
                       </span>
-                      {console.log(list)}
                     </td>
                   ) : (
-                    <td>{list?.movie}</td>
+                    <td>
+                      <span className='video-game-table-data'>
+                        {list?.videoGame}
+                      </span>
+                    </td>
                   )}
 
-                  {/* Release Date section */}
-                  {movieListEditingID === list?.id ? (
+                  {/* Video game release date section */}
+                  {videoGameListId === list?.id ? (
                     <td>
                       <span className='edit-input-wrapper'>
                         <input
                           type='number'
-                          className='edit-input '
-                          value={movieReleaseDateText}
+                          className='edit-input video-game-edit-input'
+                          value={videoGameReleaseDateText}
                           onChange={(e) =>
-                            setMovieReleaseDateText(e.target.value)
+                            setVideoGameReleaseDateText(e.target.value)
                           }
-                          defaultValue={list?.movieReleaseDate}
+                          defaultValue={list?.videoGameReleaseDate}
                         />
                       </span>
                     </td>
                   ) : (
-                    <td>{list?.movieReleaseDate}</td>
+                    <td>
+                      <span className='video-game-table-data'>
+                        {list?.videoGameReleaseDate}
+                      </span>
+                    </td>
+                  )}
+                  {/* Video game platform section */}
+                  {videoGameListId === list?.id ? (
+                    <td>
+                      <span className='edit-input-wrapper'>
+                        <input
+                          type='number'
+                          className='edit-input video-game-edit-input '
+                          value={videoGamePlatformText}
+                          onChange={(e) =>
+                            setVideoGamePlatformText(e.target.value)
+                          }
+                          defaultValue={list?.videoGamePlatform}
+                        />
+                      </span>
+                    </td>
+                  ) : (
+                    <td>
+                      <span className='video-game-table-data'>
+                        {list?.videoGamePlatform}
+                      </span>
+                    </td>
                   )}
 
                   {/* Button section */}
                   <div className='d-flex justify-content-around'>
                     {/* Edit Button */}
-                    <div className='movie-edit-save-delete-wrapper'>
+                    <div className='video-game-edit-save-delete-wrapper'>
                       {editButton ? (
                         <Button
-                          className='movie-edit-and-save-button'
+                          className='video-game-edit-save-buutton'
                           variant='secondary'
                           onClick={() => {
-                            setMovieListEditingId(list?.id);
+                            setVideoGameListId(list?.id);
                             setEditButton(false);
                             setSaveButton(true);
                           }}
@@ -113,16 +154,14 @@ const VideoGameList = ({ movieListItem, setMovieListItem }) => {
                       ) : null}
 
                       {/* Save Edited information Button */}
-
-                      {saveButton && movieListEditingID === list?.id ? (
+                      {saveButton && videoGameListId === list?.id ? (
                         <Button
-                          className='movie-edit-and-save-button'
+                          className='video-game-edit-save-buutton'
                           variant='primary'
                           onClick={() => {
-                            editMovie(list.id);
+                            editVideoGame(list.id);
                             setEditButton(true);
                             setSaveButton(false);
-                            console.log(saveButton);
                           }}
                         >
                           Save
@@ -132,7 +171,7 @@ const VideoGameList = ({ movieListItem, setMovieListItem }) => {
                       {/* Delete button */}
                       <Button
                         variant='danger'
-                        onClick={() => handleTvShowDelete(list?.id)}
+                        onClick={() => handleVideoGameDelete(list?.id)}
                       >
                         Delete
                       </Button>
@@ -144,8 +183,8 @@ const VideoGameList = ({ movieListItem, setMovieListItem }) => {
           </Table>
         ) : (
           <div className='no-list-title-wrapper'>
-            <Alert variant='primary'>
-              <h1 className='no-list-title'>No Movies in your Movie List</h1>
+            <Alert variant='success'>
+              <h1 className='no-list-title'>NO VIDEO GAMES IN YOUR LIST </h1>
             </Alert>
           </div>
         )}

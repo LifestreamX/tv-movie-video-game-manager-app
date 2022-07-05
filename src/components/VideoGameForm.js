@@ -62,7 +62,7 @@ const VideoGameForm = ({
         <Col className='d-flex justify-content-center align-items-center flex-column add-tv-wrapper w-50'>
           {/* Title Section */}
           <Row className=' my-5'>
-            <h1 className='text-light my-2 form-title '> Movie </h1>
+            <h1 className='text-light my-2 form-title '> Video Game</h1>
           </Row>
 
           {/*  Form section */}
@@ -72,7 +72,7 @@ const VideoGameForm = ({
               className='text-light  form-wrapper d-flex flex-column  align-items-center '
             >
               <Form.Group className='mb-4' controlId='formBasicEmail'>
-                <Form.Label>Movie</Form.Label>
+                <Form.Label>Video Game</Form.Label>
                 <Form.Control
                   value={videoGame}
                   onChange={handleVideoGameChange}

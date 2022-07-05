@@ -65,12 +65,12 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
     setTvShowListEditingId(null);
   };
 
-  useEffect(() => {}, []);
+  console.log(tvListItem.length);
 
   return (
     <div className=' tv-list-wrapper d-flex justify-content-center  '>
       <Container className='mt-5 tv-container '>
-        {tvListItem > 0 ? (
+        {tvListItem.length > 0 ? (
           <Table variant='dark' striped bordered hover>
             <thead className='fs-3 '>
               <tr className='text-center'>
@@ -80,6 +80,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                 <th> Current Season</th>
                 <th>Current Episode</th>
                 <th></th>
+                {/*  */}
               </tr>
             </thead>
             <tbody className='text-center h-25'>
@@ -225,7 +226,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
         ) : (
           <div className='no-list-title-wrapper'>
             <Alert variant='danger'>
-              <h1 className='no-list-title'>No Movies in your Movie List</h1>
+              <h1 className='no-list-title'>NO TV SHOWS IN YOUR</h1>
             </Alert>
           </div>
         )}

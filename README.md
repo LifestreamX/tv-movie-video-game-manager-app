@@ -7,6 +7,15 @@
 - store2
 
 
+TODO:
+
+- Finish Video game section
+- try context
+- Local storage
+- responsive
+
+
+
 
 
 

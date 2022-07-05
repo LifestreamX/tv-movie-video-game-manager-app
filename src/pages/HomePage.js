@@ -38,7 +38,7 @@ const HomePage = () => {
               <Link to='movie-list'>
                 <Card.Title className='fs-1'>MY MOVIE LIST</Card.Title>
               </Link>
-              <Link to='tv-list'>
+              <Link to='movie-list'>
                 <BsFillArrowRightCircleFill size={70} />
               </Link>
             </Card.Body>
@@ -50,7 +50,7 @@ const HomePage = () => {
               <Link to='video-game-list'>
                 <Card.Title className='fs-1'>MY VIDEO GAME LIST</Card.Title>
               </Link>
-              <Link to='tv-list'>
+              <Link to='video-game-list'>
                 <BsFillArrowRightCircleFill size={70} />
               </Link>
             </Card.Body>
