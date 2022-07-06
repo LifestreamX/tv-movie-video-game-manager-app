@@ -181,7 +181,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                     <div className='tv-edit-save-delete-wrapper'>
                       {editButton ? (
                         <Button
-                        className='edit-button'
+                        className='edit-button tv-edit-button'
 
                           variant='secondary'
                           onClick={() => {

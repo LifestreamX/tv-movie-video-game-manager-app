@@ -17,7 +17,7 @@ const HomePage = () => {
         </Col>
       </Row>
       <Row>
-        <CardGroup className='text-dark '>
+        <CardGroup className='text-dark cards'>
           {/* TV card */}
           <Card className='mx-5 card-wrapper border border-dark card'>
             <Card.Img variant='top' src={TvShow} />

@@ -55,7 +55,7 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
 
   return (
     <div className=' video-game-list-wrapper d-flex justify-content-center  '>
-      <Container className='mt-5 tv-container '>
+      <Container className='mt-5  '>
         {videoGameList.length > 0 ? (
           <Table variant='dark' striped bordered hover responsive>
             <thead className='fs-3 '>
@@ -141,7 +141,7 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
                     <div className='video-game-edit-save-delete-wrapper'>
                       {editButton ? (
                         <Button
-                          className='video-game-edit-save-buutton'
+                          className='video-game-edit-save-buutton edit-button '
                           variant='secondary'
                           onClick={() => {
                             setVideoGameListId(list?.id);
@@ -156,7 +156,7 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
                       {/* Save Edited information Button */}
                       {saveButton && videoGameListId === list?.id ? (
                         <Button
-                          className='video-game-edit-save-buutton'
+                          className='video-game-edit-save-buutton save-button'
                           variant='primary'
                           onClick={() => {
                             editVideoGame(list.id);

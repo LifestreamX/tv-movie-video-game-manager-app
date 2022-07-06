@@ -80,8 +80,8 @@ const TvForm = ({
 
   return (
     <>
-      <Container className='d-flex justify-content-center align-items-center flex-column  text-dark h-50'>
-        <Col className='d-flex justify-content-center align-items-center flex-column add-tv-wrapper w-50'>
+      <Container className='d-flex justify-content-center align-items-center flex-column  text-dark h-75 tv-form'>
+        <Col className='d-flex justify-content-center align-items-center flex-column add-tv-wrapper w-75'>
           {/* Title Section */}
           <Row className=' my-5'>
             <h1 className='text-light my-2 form-title '> TV </h1>
@@ -137,10 +137,10 @@ const TvForm = ({
               <Button
                 variant='primary'
                 type='submit'
-                className='w-25 button-wrapper'
+                className='w-25 button-wrapper w-75'
               >
                 <div className='d-flex justify-content-center align-items-center'>
-                  <span className='mx-2 fs-3'>ADD</span>{' '}
+                  <span className='mx-2 fs-4'>ADD</span>{' '}
                   <AiFillPlusCircle size={30} />
                 </div>
               </Button>{' '}

@@ -6,22 +6,17 @@
 }
 
 html {
-  height: 100% !important;
+  width: 100%;
 }
 
 #root {
-  height: 100% !important;
+  height: 100%;
 }
 
 body {
   height: 100%;
   font-family: 'Audiowide', cursive;
   font-family: 'Roboto', sans-serif;
-}
-
-.layout {
-  height: 100%;
-  overflow: hidden;
 }
 
 /* Remove input number arrows */
@@ -45,7 +40,8 @@ input::-webkit-inner-spin-button {
 /* Layout  */
 .layout-wrapper {
   overflow-y: scroll;
-  height: 100%;
+  height: 91.6vh;
+  width: 100%;
   margin: 0;
   font-weight: 100;
   background: radial-gradient(#393ca2, #1f1013);
@@ -57,7 +53,7 @@ input::-webkit-inner-spin-button {
   -moz-animation: fadeIn 1 1s ease-out;
   -o-animation: fadeIn 1 1s ease-out;
   animation: fadeIn 1 1s ease-out;
-  z-index: -1;
+  z-index: -99;
   color: white;
 }
 
@@ -270,17 +266,17 @@ input::-webkit-inner-spin-button {
 }
 
 .title {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 800;
   position: relative;
-  bottom: 100px;
+  bottom: 60px;
 }
 
 .title-subheading {
   font-size: 4rem;
   font-weight: 800;
   position: relative;
-  bottom: 100px;
+  bottom: 80px;
 }
 
 .card-wrapper {
@@ -300,6 +296,12 @@ input::-webkit-inner-spin-button {
 }
 
 /* Add Tv form component*/
+
+.tv-form {
+  position: relative;
+  bottom: 150px;
+  z-index: 99;
+}
 
 .tv-add {
   background: radial-gradient(#610e0e, #1f1013) !important;
@@ -339,7 +341,7 @@ input {
 /* AddTvShow page */
 .add-tv-show-wrapper {
   background: radial-gradient(#610e0e, #1f1013) !important;
-  height: 100vh;
+  height: 100%;
 }
 
 /* Tv Page */
@@ -377,12 +379,9 @@ td {
   justify-content: space-around;
 }
 
-/* Add movie page */
+/* Movie form */
 
-.add-movie-wrapper {
-  background: radial-gradient(#0053e2, #1f1013) !important;
-  height: 100vh;
-}
+/* Add movie page */
 
 .movie-button-wrapper {
   outline: 1px solid white !important;
@@ -391,7 +390,6 @@ td {
 
 /* Movie List */
 .movie-list-wrapper {
-  background: radial-gradient(#0053e2, #1f1013) !important;
   height: 100% !important;
   overflow-x: hidden;
 }
@@ -424,7 +422,9 @@ td {
 /* AddVideoGame */
 .add-video-game-wrapper {
   background: radial-gradient(#23781e, #1f1013) !important;
-  height: 100vh !important;
+  /* overflow: scroll; */
+  overflow-x: hidden;
+  height: 100%;
 }
 
 /* Video game list  */
@@ -448,29 +448,99 @@ td {
   bottom: 5px !important;
 }
 
+.video-game-form-wrapper {
+  position: relative;
+  bottom: 200px;
+}
+
 /* Responsive  */
-@media screen and (max-width: 576px) {
-  .layout {
-    overflow-y: scroll;
-  }
 
-  .navigation {
-  }
-
-  .home-wrapper {
-    position: relative;
-    /* top: 100px !important; */
-  }
-
-  /* Home Screen */
+/* Larger screens / tablets */
+@media screen and (max-width: 992px) {
   .title {
-    font-size: 2rem;
-    bottom: -15px;
+    font-size: 3rem;
   }
 
   .title-subheading {
-    font-size: 2rem;
-    bottom: 0px;
+    font-size: 2.5rem;
+  }
+
+  .card-wrapper {
+    width: 95vw !important;
+
+    display: flex;
+  }
+  .card-title {
+    font-size: 22px !important;
+  }
+
+  .arrow-icon {
+    width: 45px !important;
+  }
+
+  .no-list-title {
+    font-size: 45px !important;
+  }
+
+  .edit-button {
+    position: relative;
+    right: 8px !important;
+  }
+
+  .save-button {
+    position: relative;
+    right: 8px !important;
+  }
+
+  /* Video game list  */
+  .video-game-edit-save-buutton {
+    position: relative;
+    left: 0px;
+    bottom: 5px;
+  }
+
+  /* Forms */
+
+  /* TV Form */
+  .add-tv-show-wrapper {
+    /* height: 100%; */
+    background-color: rebeccapurple !important;
+    overflow: scroll;
+  }
+
+  .form-title {
+    position: relative;
+    top: 20px;
+    font-size: 40px;
+  }
+
+  .tv-form {
+    height: 100%;
+    position: relative;
+    bottom: 70px;
+  }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 576px) {
+  .layout-wrapper {
+    min-height: 100%;
+  }
+
+  /* Home Screen */
+
+  .home-wrapper {
+    overflow: scroll;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    bottom: -80px;
+  }
+
+  .title-subheading {
+    font-size: 1.2rem;
+    bottom: -30px;
   }
 
   .card-wrapper {
@@ -480,7 +550,7 @@ td {
   }
 
   .card {
-    margin-bottom: 40px !important;
+    margin-bottom: 18px !important;
   }
 
   .arrow-icon {
@@ -493,15 +563,8 @@ td {
 
   /* Tv List */
 
-  .tv-list-wrapper {
-  }
-
   .no-list-title {
     font-size: 30px !important;
-  }
-
-  .tv-edit-save-delete-wrapper {
-    flex-direction: column;
   }
 
   th {
@@ -514,11 +577,46 @@ td {
 
   .edit-button {
     position: relative;
-    top: -8px !important;
+    top: 0px !important;
   }
 
   .save-button {
     position: relative;
-    top: -8px !important;
+    top: -6px !important;
+  }
+
+  .tv-edit-button {
+    position: relative;
+  }
+
+  /* Video game list  */
+  .video-game-edit-save-buutton {
+    position: relative;
+    left: 0px;
+  }
+
+  /* Forms */
+
+  /* TV Form */
+
+  .tv-form {
+    position: relative;
+    bottom: 0px;
+  }
+
+  .button-wrapper span {
+    font-size: 16px !important;
+  }
+
+  /* Movie form */
+  .add-movie-wrapper {
+    position: relative;
+    bottom: 30px;
+  }
+
+  /* Video game form */
+  .video-game-form-wrapper {
+    position: relative;
+    bottom: 150px;
   }
 }
