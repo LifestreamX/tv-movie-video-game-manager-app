@@ -4,20 +4,6 @@
 - Bootstrap Icons
 - react-router-bootstrap
 - uuid
-- store2
-
-
-TODO:
-
-- try context
-- Local storage
-- responsive
-
-
-
-
-
-
 
 
 

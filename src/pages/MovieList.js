@@ -69,7 +69,6 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
                           defaultValue={list?.movie}
                         />
                       </span>
-                      {console.log(list)}
                     </td>
                   ) : (
                     <td>{list?.movie}</td>

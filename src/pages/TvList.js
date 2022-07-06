@@ -65,7 +65,6 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
     setTvShowListEditingId(null);
   };
 
-  console.log(tvListItem.length);
 
   return (
     <div className=' tv-list-wrapper d-flex justify-content-center  '>
@@ -98,7 +97,6 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                           defaultValue={list?.show}
                         />
                       </span>
-                      {console.log(list)}
                     </td>
                   ) : (
                     <td>{list?.show}</td>
@@ -205,7 +203,6 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
 
                             setEditButton(true);
                             setSaveButton(false);
-                            console.log(saveButton);
                           }}
                         >
                           Save

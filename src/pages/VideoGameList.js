@@ -51,7 +51,6 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
     setVideoGameListId(null);
   };
 
-  console.log(videoGameList);
 
   return (
     <div className=' video-game-list-wrapper d-flex justify-content-center  '>

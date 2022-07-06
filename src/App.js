@@ -14,13 +14,12 @@ import AddVideoGame from './pages/AddVideoGame';
 function App() {
   const location = useLocation();
 
+  const [tvListItem, setTvListItem] = useState([]);
   const [show, setShow] = useState('');
   const [year, setYear] = useState('');
   const [numberOfSeasons, setNumberOfSeasons] = useState('');
   const [myCurrentSeason, setMyCurrentSeason] = useState('');
   const [myCurrentEpisode, setMyCurrentEpisoide] = useState('');
-
-  const [tvListItem, setTvListItem] = useState([]);
 
   // Movie
   const [movieListItem, setMovieListItem] = useState([]);
@@ -38,6 +37,7 @@ function App() {
       <Route path='' element={<Layout />}>
         <Route index element={<HomePage />} />
         {/* TV routes */}
+
         <Route
           path='add-tv-show'
           element={
@@ -73,6 +73,7 @@ function App() {
           }
         />
         {/* Movie routes */}
+
         <Route
           path='add-movie'
           element={

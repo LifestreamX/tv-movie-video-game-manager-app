@@ -49,6 +49,11 @@ const MovieForm = ({
     setMovieReleaseDate('');
   };
 
+
+  localStorage.setItem('movies', JSON.stringify(movie));
+
+
+
   return (
     <>
       <Container className='d-flex justify-content-center align-items-center flex-column  text-dark h-100'>
