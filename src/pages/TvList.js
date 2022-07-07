@@ -4,8 +4,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const TvList = ({ tvListItem, setTvListItem, setShow }) => {
   useEffect(() => {
-    let fetchTv = localStorage.getItem('tvshows');
-    setTvListItem(JSON.parse(fetchTv));
+    if (localStorage.getItem('tvshows') === null) {
+      return;
+    } else {
+      let fetchTv = localStorage.getItem('tvshows');
+      setTvListItem(JSON.parse(fetchTv));
+    }
   }, []);
 
   const [editButton, setEditButton] = useState(true);
@@ -15,6 +19,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
   const handleTvShowDelete = (id) => {
     const newTv = tvListItem.filter((list) => list.id !== id);
     setTvListItem(newTv);
+    localStorage.setItem('tvshows', JSON.stringify(newTv));
   };
 
   let navigate = useNavigate();
@@ -66,6 +71,8 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
 
       return list;
     });
+
+    localStorage.setItem('tvshows', JSON.stringify(tvListItem));
 
     setTvShowListEditingId(null);
   };

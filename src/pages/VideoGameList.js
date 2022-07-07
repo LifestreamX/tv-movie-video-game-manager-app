@@ -4,8 +4,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const VideoGameList = ({ videoGameList, setVideoGameList }) => {
   useEffect(() => {
-    let fetchGames = localStorage.getItem('videogames');
-    setVideoGameList(JSON.parse(fetchGames));
+    if (localStorage.getItem('videogames') === null) {
+      return;
+    } else {
+      let fetchGames = localStorage.getItem('videogames');
+      setVideoGameList(JSON.parse(fetchGames));
+    }
   }, []);
 
   const [editButton, setEditButton] = useState(true);
@@ -13,8 +17,9 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
 
   // Handle delete on Click
   const handleVideoGameDelete = (id) => {
-    const newMovie = videoGameList.filter((list) => list.id !== id);
-    setVideoGameList(newMovie);
+    const newGame = videoGameList.filter((list) => list.id !== id);
+    setVideoGameList(newGame);
+    localStorage.setItem('videogames', JSON.stringify(newGame));
   };
 
   let navigate = useNavigate();
@@ -52,6 +57,8 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
 
       return list;
     });
+
+    localStorage.setItem('videogames', JSON.stringify(videoGameList));
 
     setVideoGameListId(null);
   };

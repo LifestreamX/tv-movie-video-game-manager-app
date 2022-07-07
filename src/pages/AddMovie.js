@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MovieForm from '../components/MovieForm';
 
 const AddMovie = ({
@@ -9,6 +9,8 @@ const AddMovie = ({
   movieListItem,
   setMovieListItem,
 }) => {
+
+
   return (
     <div className='add-movie-wrapper'>
       <MovieForm

@@ -14,16 +14,7 @@ const MovieForm = ({
 }) => {
 
 
-  // const fetchMovieData = () => {
-  //   let fetchMovies = localStorage.getItem('movies');
-  //   setMovieListItem(JSON.parse(fetchMovies));
-
-  //   if (movieListItem.length > 0) {
-  //     return movieListItem;
-  //   } else if (movieListItem.length < 0) {
-  //     setMovieListItem([]);
-  //   }
-  // };
+ 
 
   let navigate = useNavigate();
 

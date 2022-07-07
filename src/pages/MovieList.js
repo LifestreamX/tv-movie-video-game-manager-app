@@ -4,8 +4,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const MovieList = ({ movieListItem, setMovieListItem }) => {
   useEffect(() => {
-    let fetchMovies = localStorage.getItem('movies');
-    setMovieListItem(JSON.parse(fetchMovies));
+    if (localStorage.getItem('movies') === null) {
+      return;
+    } else {
+      let fetchMovies = localStorage.getItem('movies');
+      setMovieListItem(JSON.parse(fetchMovies));
+    }
   }, []);
 
   const [editButton, setEditButton] = useState(true);
@@ -15,6 +19,7 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
   const handleTvShowDelete = (id) => {
     const newMovie = movieListItem.filter((list) => list.id !== id);
     setMovieListItem(newMovie);
+    localStorage.setItem('movies', JSON.stringify(newMovie));
   };
 
   let navigate = useNavigate();
@@ -43,6 +48,8 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
 
       return list;
     });
+
+    localStorage.setItem('movies', JSON.stringify(movieListItem));
 
     setMovieListEditingId(null);
   };
@@ -126,6 +133,7 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
                             editMovie(list.id);
                             setEditButton(true);
                             setSaveButton(false);
+                            // localStorage.setItem('movies', JSON.stringify(list.id));
                           }}
                         >
                           Save

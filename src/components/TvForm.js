@@ -17,7 +17,11 @@ const TvForm = ({
   setMyCurrentEpisoide,
   setTvListItem,
   tvListItem,
+  setVideoGameList
 }) => {
+
+
+
   let navigate = useNavigate();
 
   let inputRef = useRef(null);
@@ -46,6 +50,10 @@ const TvForm = ({
 
   // Handle form submit
   const handleSubmit = (e) => {
+
+    
+
+
     e.preventDefault();
 
     const ListItem = {
