@@ -12,10 +12,6 @@ const MovieForm = ({
   movieListItem,
   setMovieListItem,
 }) => {
-
-
- 
-
   let navigate = useNavigate();
 
   let inputRef = useRef(null);
@@ -57,7 +53,7 @@ const MovieForm = ({
 
   return (
     <>
-      <Container className='d-flex justify-content-center align-items-center flex-column  text-dark h-100'>
+      <Container className='d-flex justify-content-center align-items-center flex-column  text-dark h-100 form-wrapper-container'>
         <Col className='d-flex justify-content-center align-items-center flex-column add-movie-wrapper w-75'>
           {/* Title Section */}
           <Row className=' my-5'>
@@ -90,7 +86,7 @@ const MovieForm = ({
               <Button
                 variant='primary'
                 type='submit'
-                className='w-25 movie-button-wrapper w-75'
+                className='w-25 movie-button-wrapper '
               >
                 <div className='d-flex justify-content-center align-items-center '>
                   <span className='mx-2 fs-4 movie-add-button'>ADD </span>{' '}

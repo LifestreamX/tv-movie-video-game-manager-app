@@ -353,13 +353,14 @@ input {
 
 .tv-container {
   z-index: 2;
-  /* width: 70%; */
+  position: relative;
 }
 
 /* Edit TV */
 
 Table {
   border: 1px solid #ffffff !important;
+  position: relative;
 }
 
 .edit-input {
@@ -427,6 +428,12 @@ td {
   height: 100%;
 }
 
+/* Movie form component */
+.form-wrapper-container {
+  position: relative;
+  top: 0px;
+}
+
 /* Video game list  */
 
 .video-game-list-wrapper {
@@ -449,8 +456,8 @@ td {
 }
 
 .video-game-form-wrapper {
-  position: relative;
-  bottom: 200px;
+  position: relative !important;
+  bottom: 250px !important;
 }
 
 /* Responsive  */
@@ -475,7 +482,8 @@ td {
   }
 
   .arrow-icon {
-    width: 45px !important;
+    width: 40px !important;
+    margin-left: 30px;
   }
 
   .no-list-title {
@@ -499,25 +507,24 @@ td {
     bottom: 5px;
   }
 
-  /* Forms */
-
-  /* TV Form */
+  /* Add tv show page */
   .add-tv-show-wrapper {
     /* height: 100%; */
-    background-color: rebeccapurple !important;
-    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* TV form component*/
+  .tv-form {
+    height: 100%;
+    position: relative;
+    bottom: 150px;
   }
 
   .form-title {
     position: relative;
     top: 20px;
     font-size: 40px;
-  }
-
-  .tv-form {
-    height: 100%;
-    position: relative;
-    bottom: 70px;
   }
 }
 
@@ -601,7 +608,8 @@ td {
 
   .tv-form {
     position: relative;
-    bottom: 0px;
+    bottom: 230px;
+    
   }
 
   .button-wrapper span {

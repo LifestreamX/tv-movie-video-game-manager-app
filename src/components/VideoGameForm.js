@@ -103,7 +103,7 @@ const VideoGameForm = ({
               <Button
                 variant='primary'
                 type='submit'
-                className='w-25 movie-button-wrapper w-75'
+                className='w-25 movie-button-wrapper '
               >
                 <div className='d-flex justify-content-center align-items-center'>
                   <span className='mx-2 fs-4'>ADD</span>{' '}
