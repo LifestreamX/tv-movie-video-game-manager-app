@@ -3,6 +3,11 @@ import { Alert, Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const MovieList = ({ movieListItem, setMovieListItem }) => {
+  useEffect(() => {
+    let fetchMovies = localStorage.getItem('movies');
+    setMovieListItem(JSON.parse(fetchMovies));
+  }, []);
+
   const [editButton, setEditButton] = useState(true);
   const [saveButton, setSaveButton] = useState(false);
 
@@ -45,7 +50,7 @@ const MovieList = ({ movieListItem, setMovieListItem }) => {
   return (
     <div className=' movie-list-wrapper d-flex justify-content-center  '>
       <Container className='mt-5 tv-container '>
-        {movieListItem.length > 0 ? (
+        {movieListItem?.length > 0 ? (
           <Table variant='dark' striped bordered hover responsive>
             <thead className='fs-3 '>
               <tr className='text-center'>

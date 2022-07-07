@@ -45,8 +45,10 @@ const VideoGameForm = ({
       videoGamePlatform: videoGamePlatform,
     };
 
-    const newMovie = [...videoGameList, ListItem];
-    setVideoGameList(newMovie);
+    const newGame = [...videoGameList, ListItem];
+    setVideoGameList(newGame);
+    // Video game local storage setter
+    localStorage.setItem('videogames', JSON.stringify(newGame));
 
     navigate('/video-game-list');
 
@@ -55,6 +57,8 @@ const VideoGameForm = ({
     setVideoGameReleaseDate('');
     setVideoGamePlatform('');
   };
+
+  // console.log(videoGameList)
 
   return (
     <>

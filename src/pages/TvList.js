@@ -3,6 +3,11 @@ import { Alert, Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const TvList = ({ tvListItem, setTvListItem, setShow }) => {
+  useEffect(() => {
+    let fetchTv = localStorage.getItem('tvshows');
+    setTvListItem(JSON.parse(fetchTv));
+  }, []);
+
   const [editButton, setEditButton] = useState(true);
   const [saveButton, setSaveButton] = useState(false);
 
@@ -65,11 +70,10 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
     setTvShowListEditingId(null);
   };
 
-
   return (
     <div className=' tv-list-wrapper d-flex justify-content-center  '>
       <Container className='mt-5 tv-container '>
-        {tvListItem.length > 0 ? (
+        {tvListItem?.length > 0 ? (
           <Table variant='dark' striped bordered hover responsive>
             <thead className='fs-3 '>
               <tr className='text-center'>
@@ -179,8 +183,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                     <div className='tv-edit-save-delete-wrapper'>
                       {editButton ? (
                         <Button
-                        className='edit-button tv-edit-button'
-
+                          className='edit-button tv-edit-button'
                           variant='secondary'
                           onClick={() => {
                             setTvShowListEditingId(list?.id);

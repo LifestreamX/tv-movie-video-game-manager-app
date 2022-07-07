@@ -18,8 +18,6 @@ const TvForm = ({
   setTvListItem,
   tvListItem,
 }) => {
-
-
   let navigate = useNavigate();
 
   let inputRef = useRef(null);
@@ -59,11 +57,11 @@ const TvForm = ({
       myCurrentEpisode: myCurrentEpisode,
     };
 
-    
-
-
     const newTv = [...tvListItem, ListItem];
     setTvListItem(newTv);
+
+    // Tvshow local storage setter
+    localStorage.setItem('tvshows', JSON.stringify(newTv));
 
     navigate('/tv-list');
 
@@ -74,8 +72,6 @@ const TvForm = ({
     setMyCurrentEpisoide('');
     setMyCurrentSeason('');
     setMyCurrentEpisoide('');
-
-
   };
 
   return (

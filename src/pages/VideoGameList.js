@@ -3,6 +3,11 @@ import { Alert, Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const VideoGameList = ({ videoGameList, setVideoGameList }) => {
+  useEffect(() => {
+    let fetchGames = localStorage.getItem('videogames');
+    setVideoGameList(JSON.parse(fetchGames));
+  }, []);
+
   const [editButton, setEditButton] = useState(true);
   const [saveButton, setSaveButton] = useState(false);
 
@@ -51,11 +56,10 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
     setVideoGameListId(null);
   };
 
-
   return (
     <div className=' video-game-list-wrapper d-flex justify-content-center  '>
       <Container className='mt-5  '>
-        {videoGameList.length > 0 ? (
+        {videoGameList?.length > 0 ? (
           <Table variant='dark' striped bordered hover responsive>
             <thead className='fs-3 '>
               <tr className='text-center'>

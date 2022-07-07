@@ -12,6 +12,19 @@ const MovieForm = ({
   movieListItem,
   setMovieListItem,
 }) => {
+
+
+  // const fetchMovieData = () => {
+  //   let fetchMovies = localStorage.getItem('movies');
+  //   setMovieListItem(JSON.parse(fetchMovies));
+
+  //   if (movieListItem.length > 0) {
+  //     return movieListItem;
+  //   } else if (movieListItem.length < 0) {
+  //     setMovieListItem([]);
+  //   }
+  // };
+
   let navigate = useNavigate();
 
   let inputRef = useRef(null);
@@ -41,6 +54,8 @@ const MovieForm = ({
 
     const newMovie = [...movieListItem, ListItem];
     setMovieListItem(newMovie);
+    // Movie local storage setter
+    localStorage.setItem('movies', JSON.stringify(newMovie));
 
     navigate('/movie-list');
 
@@ -48,11 +63,6 @@ const MovieForm = ({
     setMovie('');
     setMovieReleaseDate('');
   };
-
-
-  localStorage.setItem('movies', JSON.stringify(movie));
-
-
 
   return (
     <>
