@@ -6,7 +6,7 @@
 - uuid
 
 
-
+TODO: Localstorage and css styling
 
 
 
