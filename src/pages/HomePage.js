@@ -10,7 +10,7 @@ import '../App.css';
 const HomePage = () => {
   return (
     <Container className=' d-flex flex-column justify-content-evenly align-items-center h-100 home-wrapper'>
-      <Row>
+      <Row className='home-title-section'>
         <Col className='d-flex justify-content-center align-items-center flex-column'>
           <h1 className='title'> TV | Movie | Video Game </h1>
           <h2 className='title-subheading my-5'>List Manager </h2>

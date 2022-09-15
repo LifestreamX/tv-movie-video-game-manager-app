@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -45,10 +46,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
   font-weight: 100;
   background: radial-gradient(#393ca2, #1f1013);
-  -webkit-overflow-y: hidden;
+  /* -webkit-overflow-y: hidden;
   -moz-overflow-y: hidden;
   -o-overflow-y: hidden;
-  overflow-y: hidden;
+  overflow-y: hidden; */
   -webkit-animation: fadeIn 1 1s ease-out;
   -moz-animation: fadeIn 1 1s ease-out;
   -o-animation: fadeIn 1 1s ease-out;
@@ -263,6 +264,21 @@ input::-webkit-inner-spin-button {
 
 .home-wrapper {
   height: 100% !important;
+  position: relative;
+}
+
+@media screen and (max-height: 700px) {
+  .home-wrapper {
+    top: 120px;
+    position: relative;
+    /* overflow: scroll; */
+  }
+
+  /* .home-title-section {
+    position: absolute;
+    top: -100px;
+    z-index: 99;
+  } */
 }
 
 .title {
@@ -536,9 +552,9 @@ td {
 
   /* Home Screen */
 
-  .home-wrapper {
+  /* .home-wrapper {
     overflow: scroll;
-  }
+  } */
 
   .title {
     font-size: 1.5rem;
@@ -609,7 +625,6 @@ td {
   .tv-form {
     position: relative;
     bottom: 230px;
-    
   }
 
   .button-wrapper span {
