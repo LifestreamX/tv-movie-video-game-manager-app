@@ -107,7 +107,7 @@ const VideoGameForm = ({
                   className='w-25 button-wrapper '
                 >
                   <div className='d-flex justify-content-center align-items-center'>
-                    <span className='mx-2 fs-4'>ADD</span>{' '}
+                    <span className='mx-2 fs-4 video-game-add-button'>ADD</span>{' '}
                     <AiFillPlusCircle size={30} />
                   </div>
                 </Button>{' '}

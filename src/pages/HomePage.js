@@ -16,7 +16,7 @@ const HomePage = () => {
           <h2 className='title-subheading my-5'>List Manager </h2>
         </Col>
       </Row>
-      <Row>
+      <Row className='home-row-card-wrapper'>
         <CardGroup className='text-dark cards'>
           {/* TV card */}
           <Card className='mx-5 card-wrapper border border-dark card'>

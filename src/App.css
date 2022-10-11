@@ -10,6 +10,7 @@ body {
   height: 100%;
   font-family: 'Audiowide', cursive;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 /* Remove input number arrows */
@@ -33,11 +34,11 @@ input::-webkit-inner-spin-button {
 
 /* Layout  */
 .layout-wrapper {
-  overflow-y: scroll;
   /* height: calc(100% - 108px); */
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0;
+  overflow: hidden;
   font-weight: 100;
   background: radial-gradient(#393ca2, #1f1013);
   /* -webkit-overflow-y: hidden;
@@ -261,22 +262,13 @@ input::-webkit-inner-spin-button {
   position: relative;
 }
 
-@media screen and (max-height: 700px) {
-  .home-wrapper {
-    top: 120px;
-    position: relative;
-    /* overflow: scroll; */
-  }
-
-  /* .home-title-section {
-    position: absolute;
-    top: -100px;
-    z-index: 99;
-  } */
+.video-game-add-button {
+  font-weight: bolder;
 }
 
 .title {
   font-size: 5rem;
+  text-align: center;
   font-weight: 800;
   position: relative;
   bottom: 60px;
@@ -309,8 +301,9 @@ input::-webkit-inner-spin-button {
 
 .tv-form {
   position: relative;
-  bottom: 150px;
+  top: -250px;
   z-index: 99;
+  margin-bottom: 40px !important;
 }
 
 .tv-add {
@@ -334,10 +327,21 @@ input::-webkit-inner-spin-button {
   padding: 5rem;
 }
 
+.total-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .button-wrapper {
   position: relative;
   top: 25px;
   outline: 1px solid white !important;
+}
+
+.add-tv-button {
+  font-weight: bolder;
 }
 
 label {
@@ -399,6 +403,10 @@ td {
   margin-top: 20px !important;
 }
 
+.movie-add-button {
+  font-weight: bolder;
+}
+
 /* Movie List */
 .movie-list-wrapper {
   height: 100% !important;
@@ -436,12 +444,12 @@ td {
   /* overflow: scroll; */
   overflow-x: hidden;
   height: 100%;
+  top: 20px;
 }
 
 /* Movie form component */
 .form-wrapper-container {
   position: relative;
-  top: 0px;
 }
 
 /* Video game list  */
@@ -471,6 +479,14 @@ td {
 }
 
 /* Responsive  --------------------------------------------------------------- */
+
+@media screen and (max-width: 1025px) {
+  .card-title {
+    font-size: 1.4rem;
+    padding-left: 10px;
+    text-align: center;
+  }
+}
 
 /* Larger screens / tablets */
 @media screen and (max-width: 768px) {
@@ -636,7 +652,7 @@ td {
     display: flex !important;
   }
 
-  .edit-button{
+  .edit-button {
     margin-right: 10px;
   }
 
