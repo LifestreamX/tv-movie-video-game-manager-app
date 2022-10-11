@@ -53,11 +53,11 @@ const MovieForm = ({
 
   return (
     <>
-      <Container className='d-flex justify-content-center align-items-center flex-column  text-dark h-100 form-wrapper-container'>
+      <Container className='d-flex justify-content-center align-items-center flex-column  '>
         <Col className='d-flex justify-content-center align-items-center flex-column add-movie-wrapper w-75'>
           {/* Title Section */}
           <Row className=' my-5'>
-            <h1 className='text-light my-2 form-title '> Movie </h1>
+            <h1 className='text-light my-2 form-title '> ADD MOVIE </h1>
           </Row>
 
           {/*  Form section */}
@@ -83,16 +83,18 @@ const MovieForm = ({
                   onChange={handleMovieReleaseDateChange}
                 />
               </Form.Group>
-              <Button
-                variant='primary'
-                type='submit'
-                className='w-25 movie-button-wrapper '
-              >
-                <div className='d-flex justify-content-center align-items-center '>
-                  <span className='mx-2 fs-4 movie-add-button'>ADD </span>{' '}
-                  <AiFillPlusCircle size={30} />
-                </div>
-              </Button>{' '}
+              <div className='total-button-wrapper'>
+                <Button
+                  variant='primary'
+                  type='submit'
+                  className='w-25 button-wrapper '
+                >
+                  <div className='d-flex justify-content-center align-items-center '>
+                    <span className='mx-2 fs-4 movie-add-button'>ADD </span>{' '}
+                    <AiFillPlusCircle size={30} />
+                  </div>
+                </Button>{' '}
+              </div>
             </Form>
           </Row>
         </Col>

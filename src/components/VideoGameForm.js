@@ -63,17 +63,17 @@ const VideoGameForm = ({
   return (
     <>
       <Container className='d-flex justify-content-center align-items-center flex-column video-game-form-wrapper  text-dark h-100 '>
-        <Col className='d-flex justify-content-center align-items-center flex-column add-tv-wrapper  w-75'>
+        <Col className='d-flex justify-content-center align-items-center flex-column add-videogame-wrapper  w-75'>
           {/* Title Section */}
           <Row className=' my-5'>
-            <h1 className='text-light my-2 form-title'> Video Game</h1>
+            <h1 className='text-light my-2 form-title'> ADD GAME</h1>
           </Row>
 
           {/*  Form section */}
           <Row className='d-flex justify-content-center h-50 w-100  rounded text-light '>
             <Form
               onSubmit={handleSubmit}
-              className='text-light  form-wrapper d-flex flex-column  align-items-center '
+              className='text-light  form-wrapper d-flex flex-column  align-items-center game-form '
             >
               <Form.Group className='mb-4' controlId='formBasicEmail'>
                 <Form.Label>Video Game</Form.Label>
@@ -100,16 +100,18 @@ const VideoGameForm = ({
                   onChange={handleVideoGamePlatformChange}
                 />
               </Form.Group>
-              <Button
-                variant='primary'
-                type='submit'
-                className='w-25 movie-button-wrapper '
-              >
-                <div className='d-flex justify-content-center align-items-center'>
-                  <span className='mx-2 fs-4'>ADD</span>{' '}
-                  <AiFillPlusCircle size={30} />
-                </div>
-              </Button>{' '}
+              <div className='total-button-wrapper'>
+                <Button
+                  variant='primary'
+                  type='submit'
+                  className='w-25 button-wrapper '
+                >
+                  <div className='d-flex justify-content-center align-items-center'>
+                    <span className='mx-2 fs-4'>ADD</span>{' '}
+                    <AiFillPlusCircle size={30} />
+                  </div>
+                </Button>{' '}
+              </div>
             </Form>
           </Row>
         </Col>

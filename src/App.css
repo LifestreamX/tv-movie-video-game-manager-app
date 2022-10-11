@@ -6,14 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-}
-
-#root {
-  height: 100%;
-}
-
 body {
   height: 100%;
   font-family: 'Audiowide', cursive;
@@ -28,9 +20,10 @@ input::-webkit-inner-spin-button {
 }
 
 /* Nav Bar */
+
 .navigation {
   z-index: 999;
-  position: sticky;
+  position: fixed;
 }
 
 .nav-icon:hover {
@@ -41,7 +34,8 @@ input::-webkit-inner-spin-button {
 /* Layout  */
 .layout-wrapper {
   overflow-y: scroll;
-  height: calc(100% - 107.95px);
+  /* height: calc(100% - 108px); */
+  height: 100vh;
   width: 100%;
   margin: 0;
   font-weight: 100;
@@ -476,10 +470,10 @@ td {
   bottom: 250px !important;
 }
 
-/* Responsive  */
+/* Responsive  --------------------------------------------------------------- */
 
 /* Larger screens / tablets */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .title {
     font-size: 3rem;
   }
@@ -545,29 +539,35 @@ td {
 }
 
 /* Mobile Screens */
-@media screen and (max-width: 576px) {
+
+@media screen and (max-width: 480px) {
   .layout-wrapper {
-    min-height: 100%;
+    height: 100% !important;
   }
 
   /* Home Screen */
 
-  /* .home-wrapper {
-    overflow: scroll;
-  } */
+  .home-wrapper {
+    position: relative;
+    top: 0;
+  }
 
   .title {
-    font-size: 1.5rem;
-    bottom: -80px;
+    font-size: 1.4rem;
+    bottom: -50px;
   }
 
   .title-subheading {
     font-size: 1.2rem;
-    bottom: -30px;
+    bottom: -20px;
+  }
+
+  .cards {
+    width: 100%;
   }
 
   .card-wrapper {
-    width: 50vw !important;
+    width: 80vw !important;
     position: relative;
     top: 0px;
   }
@@ -582,9 +582,14 @@ td {
 
   .card-title {
     font-size: 18px !important;
+    font-weight: bolder;
   }
 
   /* Tv List */
+
+  .tv-list-wrapper {
+    height: 100vh !important;
+  }
 
   .no-list-title {
     font-size: 30px !important;
@@ -612,23 +617,69 @@ td {
     position: relative;
   }
 
+  /* Mobie list */
+  .movie-list-wrapper {
+    height: 100vh !important;
+  }
+
   /* Video game list  */
+
+  .video-game-list-wrapper {
+    height: 100vh !important;
+  }
+
+  .video-game-edit-save-delete-wrapper {
+    display: flex;
+  }
+
   .video-game-edit-save-buutton {
-    position: relative;
-    left: 0px;
+    display: flex !important;
+  }
+
+  .edit-button{
+    margin-right: 10px;
   }
 
   /* Forms */
 
   /* TV Form */
-
   .tv-form {
     position: relative;
-    bottom: 230px;
+    top: 0;
+  }
+
+  .add-tv-wrapper {
+    position: relative;
+    top: 0;
+  }
+
+  .row-wrapper {
+    margin-bottom: 50px !important;
+  }
+
+  .total-button-wrapper {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px !;
   }
 
   .button-wrapper span {
-    font-size: 16px !important;
+    font-size: 24px !important;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .add-tv-button-wrapper {
+    width: 100%;
+    position: absolute;
+  }
+
+  .add-tv-button {
+    position: relative;
+
+    width: 100%;
   }
 
   /* Movie form */
@@ -638,8 +689,13 @@ td {
   }
 
   /* Video game form */
+
   .video-game-form-wrapper {
-    position: relative;
-    bottom: 150px;
+    position: absolute;
+    top: 0px;
+  }
+
+  .game-form {
+    margin-bottom: 60px;
   }
 }

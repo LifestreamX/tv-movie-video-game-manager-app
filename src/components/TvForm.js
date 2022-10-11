@@ -17,11 +17,8 @@ const TvForm = ({
   setMyCurrentEpisoide,
   setTvListItem,
   tvListItem,
-  setVideoGameList
+  setVideoGameList,
 }) => {
-
-
-
   let navigate = useNavigate();
 
   let inputRef = useRef(null);
@@ -50,10 +47,6 @@ const TvForm = ({
 
   // Handle form submit
   const handleSubmit = (e) => {
-
-    
-
-
     e.preventDefault();
 
     const ListItem = {
@@ -88,11 +81,11 @@ const TvForm = ({
         <Col className='d-flex justify-content-center align-items-center flex-column add-tv-wrapper w-75'>
           {/* Title Section */}
           <Row className=' my-5'>
-            <h1 className='text-light my-2 form-title '> TV </h1>
+            <h1 className='text-light my-2 form-title '> ADD SHOW </h1>
           </Row>
 
           {/*  Form section */}
-          <Row className='d-flex justify-content-center h-50 w-100  rounded text-light'>
+          <Row className='d-flex justify-content-center h-50 w-100  rounded text-light row-wrapper'>
             <Form
               onSubmit={handleSubmit}
               className='text-light  form-wrapper d-flex flex-column  align-items-center '
@@ -138,16 +131,18 @@ const TvForm = ({
                   onChange={handleCurrentEpisodeChange}
                 />
               </Form.Group>
-              <Button
-                variant='primary'
-                type='submit'
-                className='w-25 button-wrapper '
-              >
-                <div className='d-flex justify-content-center align-items-center'>
-                  <span className='mx-2 fs-4'>ADD</span>{' '}
-                  <AiFillPlusCircle size={30} />
-                </div>
-              </Button>{' '}
+              <div className='total-button-wrapper'>
+                <Button
+                  variant='primary'
+                  type='submit'
+                  className='w-25 button-wrapper '
+                >
+                  <div className='d-flex justify-content-center align-items-center ad-tv-button-wrapper'>
+                    <span className='mx-2 fs-4 add-tv-button'>ADD</span>{' '}
+                    <AiFillPlusCircle size={30} />
+                  </div>
+                </Button>{' '}
+              </div>
             </Form>
           </Row>
         </Col>
