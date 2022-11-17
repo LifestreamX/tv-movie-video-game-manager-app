@@ -4,7 +4,7 @@ TV-Movie-Video-Game-App
 
 
 
- Access my site at https://mediamanager.tyler-allen.com/
+ Access my site at https://mediamanager.tyler-allen.com
 
 ## About The App
 
