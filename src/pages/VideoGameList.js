@@ -168,6 +168,7 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
                         <Button
                           className='video-game-edit-save-buutton save-button'
                           variant='primary'
+                          id='buttons'
                           onClick={() => {
                             editVideoGame(list.id);
                             setEditButton(true);

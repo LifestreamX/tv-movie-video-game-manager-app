@@ -714,4 +714,9 @@ td {
   .game-form {
     margin-bottom: 60px;
   }
+
+  #buttons {
+    position: relative;
+    top: 0px !important;
+  }
 }

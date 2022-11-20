@@ -206,7 +206,8 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
 
                       {saveButton && tvShowListEditingID === list?.id ? (
                         <Button
-                          className='save-button'
+                          className='save-button '
+                          id='buttons'
                           variant='primary'
                           onClick={() => {
                             editTvShow(list.id);
