@@ -383,6 +383,10 @@ Table {
   height: 40px;
 }
 
+.tv-edit-save-button {
+  margin-right: 10px !important;
+}
+
 td {
   padding-top: 18px !important;
 }
@@ -519,6 +523,7 @@ td {
   .edit-button {
     position: relative;
     right: 8px !important;
+    /* top: 0px !important; */
   }
 
   .save-button {
@@ -531,6 +536,10 @@ td {
     position: relative;
     left: 0px;
     bottom: 5px;
+  }
+
+  .video-game-edit-save-buutton {
+    top: 0;
   }
 
   /* Add tv show page */

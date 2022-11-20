@@ -190,7 +190,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
                     <div className='tv-edit-save-delete-wrapper'>
                       {editButton ? (
                         <Button
-                          className='edit-button tv-edit-button'
+                          className='edit-button tv-edit-save-button '
                           variant='secondary'
                           onClick={() => {
                             setTvShowListEditingId(list?.id);
@@ -206,7 +206,7 @@ const TvList = ({ tvListItem, setTvListItem, setShow }) => {
 
                       {saveButton && tvShowListEditingID === list?.id ? (
                         <Button
-                          className='save-button '
+                          className='save-button tv-edit-save-button '
                           id='buttons'
                           variant='primary'
                           onClick={() => {
