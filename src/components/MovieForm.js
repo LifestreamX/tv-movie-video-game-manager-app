@@ -58,7 +58,7 @@ const MovieForm = ({
         <Col className='d-flex flex-column align-items-center justify-content-center '>
           {/* Title Section */}
           <Row className='w-50 text-center'>
-            <h1 className='text-light my-2 form-title '> ADD MOVIE </h1>
+            <h1 className='text-light my-5 form-title '> ADD MOVIE </h1>
           </Row>
 
           {/*  Form section */}
