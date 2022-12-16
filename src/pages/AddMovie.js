@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import MovieForm from '../components/MovieForm';
+import './AddMovie.css';
 
 const AddMovie = ({
   movie,
@@ -9,10 +10,8 @@ const AddMovie = ({
   movieListItem,
   setMovieListItem,
 }) => {
-
-
   return (
-    <div className='add-movie-wrapper'>
+    <div className='add-movie-wrapper h-100'>
       <MovieForm
         movie={movie}
         setMovie={setMovie}

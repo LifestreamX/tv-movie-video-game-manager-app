@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoGameForm from '../components/VideoGameForm';
+import './AddVideoGame.css';
 
 const AddVideoGame = ({
   videoGameList,
@@ -12,7 +13,7 @@ const AddVideoGame = ({
   setVideoGamePlatform,
 }) => {
   return (
-    <div className='add-video-game-wrapper'>
+    <div className='add-video-game-wrapper h-100'>
       <VideoGameForm
         videoGameList={videoGameList}
         setVideoGameList={setVideoGameList}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import './VideoGameList.css';
 
 const VideoGameList = ({ videoGameList, setVideoGameList }) => {
   useEffect(() => {
@@ -65,7 +66,7 @@ const VideoGameList = ({ videoGameList, setVideoGameList }) => {
 
   return (
     <div className=' video-game-list-wrapper d-flex justify-content-center  '>
-      <Container className='mt-5  '>
+      <Container className='mt-5 vid-container  '>
         {videoGameList?.length > 0 ? (
           <Table variant='dark' striped bordered hover responsive>
             <thead className='fs-3 '>

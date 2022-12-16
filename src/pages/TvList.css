@@ -1,0 +1,88 @@
+/* Tv Page */
+.tv-list-wrapper {
+  height: 100% !important;
+  background: radial-gradient(#610e0e, #1f1013) !important;
+}
+
+.tv-container {
+  z-index: 2;
+  position: relative;
+  top: 200px !important;
+}
+
+/* Edit TV */
+Table {
+  border: 1px solid #ffffff !important;
+  position: relative;
+}
+
+.edit-input {
+  width: 150px;
+  font-size: 16px !important;
+  height: 40px;
+}
+
+.tv-edit-save-button {
+  margin-right: 10px !important;
+}
+
+td {
+  padding-top: 18px !important;
+}
+
+.tv-edit-save-delete-wrapper {
+  padding: 10px !important;
+  display: flex !important;
+  width: 100%;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .edit-button {
+    position: relative;
+    right: 8px !important;
+    /* top: 0px !important; */
+  }
+
+  .save-button {
+    position: relative;
+    right: 8px !important;
+  }
+
+  .no-list-title {
+    font-size: 35px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Tv List */
+  .tv-list-wrapper {
+    height: 100vh !important;
+  }
+
+  .no-list-title {
+    font-size: 20px !important;
+  }
+
+  th {
+    font-size: 18px !important;
+  }
+
+  td {
+    font-size: 18px !important;
+  }
+
+  .edit-button {
+    position: relative;
+    top: 0px !important;
+  }
+
+  .save-button {
+    position: relative;
+    top: -6px !important;
+  }
+
+  .tv-edit-button {
+    position: relative;
+  }
+}

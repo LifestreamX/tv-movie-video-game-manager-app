@@ -3,6 +3,7 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import './Forms.css';
 
 const MovieForm = ({
   movie,
@@ -53,10 +54,10 @@ const MovieForm = ({
 
   return (
     <>
-      <Container className='d-flex justify-content-center align-items-center flex-column  '>
-        <Col className='d-flex justify-content-center align-items-center flex-column add-movie-wrapper w-75'>
+      <Container className='d-flex form absolute h-100'>
+        <Col className='d-flex flex-column align-items-center justify-content-center '>
           {/* Title Section */}
-          <Row className=' my-5'>
+          <Row className='w-50 text-center'>
             <h1 className='text-light my-2 form-title '> ADD MOVIE </h1>
           </Row>
 
@@ -88,9 +89,10 @@ const MovieForm = ({
                   variant='primary'
                   type='submit'
                   className='w-25 button-wrapper '
+                  id='button-mobile'
                 >
-                  <div className='d-flex justify-content-center align-items-center '>
-                    <span className='mx-2 fs-4 movie-add-button'>ADD </span>{' '}
+                  <div className='d-flex justify-content-center align-items-center add-button-wrapper'>
+                    <span className='mx-2 fs-4 add-button'>ADD</span>{' '}
                     <AiFillPlusCircle size={30} />
                   </div>
                 </Button>{' '}

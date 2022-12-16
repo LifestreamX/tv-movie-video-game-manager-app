@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Nav from '../components/Nav';
 import '../App.css';
+import './Layout.css';
 
 const Layout = () => {
   return (

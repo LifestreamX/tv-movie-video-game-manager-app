@@ -1,0 +1,84 @@
+/* Movie List */
+.movie-list-wrapper {
+  height: 100% !important;
+  overflow-x: hidden;
+}
+
+.movie-edit-save-delete-wrapper {
+  padding: 10px !important;
+  display: flex !important;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.movie-edit-and-save-button {
+  margin-right: 10px !important;
+}
+
+/* if no items are in any of the list */
+.no-list-title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.no-list-title {
+  font-size: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .edit-button {
+    position: relative;
+    right: 8px !important;
+    /* top: 0px !important; */
+  }
+
+  .save-button {
+    position: relative;
+    right: 8px !important;
+  }
+
+  .no-list-title {
+    font-size: 35px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Mobie list */
+  .movie-list-wrapper {
+    height: 100vh !important;
+  }
+
+   /* Tv List */
+   .tv-list-wrapper {
+    height: 100vh !important;
+  }
+
+  .no-list-title {
+    font-size: 20px !important;
+  }
+
+  th {
+    font-size: 18px !important;
+  }
+
+  td {
+    font-size: 18px !important;
+  }
+
+  .edit-button {
+    position: relative;
+    top: 0px !important;
+  }
+
+  .save-button {
+    position: relative;
+    top: -6px !important;
+  }
+
+  .tv-edit-button {
+    position: relative;
+  }
+
+}

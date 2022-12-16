@@ -1,0 +1,102 @@
+/* Video game list  */
+.video-game-list-wrapper {
+  background: radial-gradient(#23781e, #1f1013) !important;
+  height: 100% !important;
+}
+
+.vid-container {
+  position: relative;
+  top: 200px !important;
+}
+
+.video-game-table-data {
+  position: relative;
+  bottom: 6px;
+}
+
+.video-game-edit-save-buutton {
+  margin-right: 20px;
+}
+
+.video-game-edit-input {
+  position: relative;
+  bottom: 5px !important;
+}
+
+@media screen and (max-width: 768px) {
+  /* Video game list  */
+  .video-game-edit-save-buutton {
+    position: relative;
+    left: 0px;
+    bottom: 5px;
+  }
+
+  .video-game-edit-save-buutton {
+    top: 0;
+  }
+
+  .edit-button {
+    position: relative;
+    right: 8px !important;
+    /* top: 0px !important; */
+  }
+
+  .save-button {
+    position: relative;
+    right: 8px !important;
+  }
+
+  .no-list-title {
+    font-size: 35px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Video game list  */
+  .video-game-list-wrapper {
+    height: 100vh !important;
+  }
+
+  .video-game-edit-save-delete-wrapper {
+    display: flex;
+  }
+
+  .video-game-edit-save-buutton {
+    display: flex !important;
+  }
+
+  .edit-button {
+    margin-right: 10px;
+  }
+
+  /* Tv List */
+  .tv-list-wrapper {
+    height: 100vh !important;
+  }
+
+  .no-list-title {
+    font-size: 20px !important;
+  }
+
+  th {
+    font-size: 18px !important;
+  }
+
+  td {
+    font-size: 18px !important;
+  }
+
+  .edit-button {
+    position: relative;
+    top: 0px !important;
+  }
+
+  .save-button {
+    position: relative;
+    top: -6px !important;
+  }
+
+  .tv-edit-button {
+    position: relative;
+  }
+}

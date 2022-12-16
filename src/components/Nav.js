@@ -5,13 +5,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { BsPen } from 'react-icons/bs';
 import { LinkContainer } from 'react-router-bootstrap';
+import './Nav.css';
 
 export default function Navigation() {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
   return (
-    <Navbar bg='dark' expand='lg' variant='dark' className='navigation'>
+    <Navbar
+      bg='dark'
+      expand='lg'
+      variant='dark'
+      className='navigation position-fixed'
+    >
       <Container className='d-flex justify-content-between p-3'>
         <LinkContainer to='/'>
           <Navbar.Brand href='#home'>

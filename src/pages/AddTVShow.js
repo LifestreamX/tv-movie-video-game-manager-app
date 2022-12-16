@@ -1,5 +1,6 @@
 import React from 'react';
 import TvForm from '../components/TvForm';
+import './AddTVShow.css';
 
 const AddTVShow = ({
   show,
@@ -16,7 +17,7 @@ const AddTVShow = ({
   setTvListItem,
 }) => {
   return (
-    <div className='add-tv-show-wrapper'>
+    <div className='add-tv-show-wrapper h-100' id='wrapper'>
       <TvForm
         show={show}
         setShow={setShow}
@@ -31,7 +32,6 @@ const AddTVShow = ({
         tvListItem={tvListItem}
         setTvListItem={setTvListItem}
       />
-      
     </div>
   );
 };

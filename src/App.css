@@ -7,10 +7,13 @@
 }
 
 body {
-  height: 100%;
   font-family: 'Audiowide', cursive;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none !important; /* for Chrome, Safari, and Opera */
 }
 
 /* Remove input number arrows */
@@ -20,272 +23,39 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Nav Bar */
-
-.navigation {
-  z-index: 999;
-  position: fixed;
-}
-
-.nav-icon:hover {
-  transform: rotate(45deg);
-  transition: all 0.25s ease-in-out;
-}
-
-/* Layout  */
-.layout-wrapper {
-  /* height: calc(100% - 108px); */
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  overflow: hidden;
-  font-weight: 100;
-  background: radial-gradient(#393ca2, #1f1013);
-  /* -webkit-overflow-y: hidden;
-  -moz-overflow-y: hidden;
-  -o-overflow-y: hidden;
-  overflow-y: hidden; */
-  -webkit-animation: fadeIn 1 1s ease-out;
-  -moz-animation: fadeIn 1 1s ease-out;
-  -o-animation: fadeIn 1 1s ease-out;
-  animation: fadeIn 1 1s ease-out;
-  z-index: -99;
-  color: white;
-}
-
-.light {
-  position: absolute;
-  width: 0px;
-  opacity: 0.75;
-  background-color: white;
-  box-shadow: #e9f1f1 0px 0px 20px 2px;
-  opacity: 0;
-  top: 100vh;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin: auto;
-}
-
-.x1 {
-  -webkit-animation: floatUp 4s infinite linear;
-  -moz-animation: floatUp 4s infinite linear;
-  -o-animation: floatUp 4s infinite linear;
-  animation: floatUp 4s infinite linear;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-}
-
-.x2 {
-  -webkit-animation: floatUp 7s infinite linear;
-  -moz-animation: floatUp 7s infinite linear;
-  -o-animation: floatUp 7s infinite linear;
-  animation: floatUp 7s infinite linear;
-  -webkit-transform: scale(1.6);
-  -moz-transform: scale(1.6);
-  -o-transform: scale(1.6);
-  transform: scale(1.6);
-  left: 15%;
-}
-
-.x3 {
-  -webkit-animation: floatUp 2.5s infinite linear;
-  -moz-animation: floatUp 2.5s infinite linear;
-  -o-animation: floatUp 2.5s infinite linear;
-  animation: floatUp 2.5s infinite linear;
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -o-transform: scale(0.5);
-  transform: scale(0.5);
-  left: -15%;
-}
-
-.x4 {
-  -webkit-animation: floatUp 4.5s infinite linear;
-  -moz-animation: floatUp 4.5s infinite linear;
-  -o-animation: floatUp 4.5s infinite linear;
-  animation: floatUp 4.5s infinite linear;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-  left: -34%;
-}
-
-.x5 {
-  -webkit-animation: floatUp 8s infinite linear;
-  -moz-animation: floatUp 8s infinite linear;
-  -o-animation: floatUp 8s infinite linear;
-  animation: floatUp 8s infinite linear;
-  -webkit-transform: scale(2.2);
-  -moz-transform: scale(2.2);
-  -o-transform: scale(2.2);
-  transform: scale(2.2);
-  left: -57%;
-}
-
-.x6 {
-  -webkit-animation: floatUp 3s infinite linear;
-  -moz-animation: floatUp 3s infinite linear;
-  -o-animation: floatUp 3s infinite linear;
-  animation: floatUp 3s infinite linear;
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  transform: scale(0.8);
-  left: -81%;
-}
-
-.x7 {
-  -webkit-animation: floatUp 5.3s infinite linear;
-  -moz-animation: floatUp 5.3s infinite linear;
-  -o-animation: floatUp 5.3s infinite linear;
-  animation: floatUp 5.3s infinite linear;
-  -webkit-transform: scale(3.2);
-  -moz-transform: scale(3.2);
-  -o-transform: scale(3.2);
-  transform: scale(3.2);
-  left: 37%;
-}
-
-.x8 {
-  -webkit-animation: floatUp 4.7s infinite linear;
-  -moz-animation: floatUp 4.7s infinite linear;
-  -o-animation: floatUp 4.7s infinite linear;
-  animation: floatUp 4.7s infinite linear;
-  -webkit-transform: scale(1.7);
-  -moz-transform: scale(1.7);
-  -o-transform: scale(1.7);
-  transform: scale(1.7);
-  left: 62%;
-}
-
-.x9 {
-  -webkit-animation: floatUp 4.1s infinite linear;
-  -moz-animation: floatUp 4.1s infinite linear;
-  -o-animation: floatUp 4.1s infinite linear;
-  animation: floatUp 4.1s infinite linear;
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
-  left: 85%;
-}
-
-@-webkit-keyframes floatUp {
-  0% {
-    top: 100vh;
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    top: 0vh;
-    opacity: 0.8;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    top: -100vh;
-    opacity: 0;
-  }
-}
-@-moz-keyframes floatUp {
-  0% {
-    top: 100vh;
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    top: 0vh;
-    opacity: 0.8;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    top: -100vh;
-    opacity: 0;
-  }
-}
-@-o-keyframes floatUp {
-  0% {
-    top: 100vh;
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    top: 0vh;
-    opacity: 0.8;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    top: -100vh;
-    opacity: 0;
-  }
-}
-@keyframes floatUp {
-  0% {
-    top: 100vh;
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    top: 0vh;
-    opacity: 0.8;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    top: -100vh;
-    opacity: 0;
-  }
-}
-
 /* Home page */
-
 .home-wrapper {
   height: 100% !important;
   position: relative;
 }
 
-.video-game-add-button {
-  font-weight: bolder;
-}
-
 .title {
-  font-size: 5rem;
+  font-size: 55px;
   text-align: center;
   font-weight: 800;
   position: relative;
-  bottom: 60px;
+  top: 100px;
 }
 
 .title-subheading {
-  font-size: 4rem;
+  font-size: 40px;
   font-weight: 800;
   position: relative;
-  bottom: 80px;
+  top: 75px;
 }
 
 .card-wrapper {
-  width: 80vw !important;
+  width: 50vw !important;
   position: relative;
-  bottom: 100px;
   border-radius: 10px !important;
+}
+
+.card-title {
+  font-size: 24px;
+}
+
+.arrow-icon {
+  width: 40px;
 }
 
 .card-wrapper a {
@@ -297,294 +67,73 @@ input::-webkit-inner-spin-button {
   color: rgba(0, 0, 0, 0.668) !important;
 }
 
-/* Add Tv form component*/
-
-.tv-form {
-  position: relative;
-  top: -250px;
-  z-index: 99;
-  margin-bottom: 40px !important;
-}
-
-.tv-add {
-  background: radial-gradient(#610e0e, #1f1013) !important;
-}
-
-.add-tv-wrapper {
-  position: relative;
-  top: 75px;
-}
-
-.form-title {
-  font-size: 4rem;
-}
-
-.form-wrapper {
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  padding: 5rem;
-}
-
-.total-button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.button-wrapper {
-  position: relative;
-  top: 25px;
-  outline: 1px solid white !important;
-}
-
-.add-tv-button {
-  font-weight: bolder;
-}
-
-label {
-  font-size: 1.5rem;
-}
-
-input {
-  font-size: 2rem !important;
-}
-
-/* AddTvShow page */
-.add-tv-show-wrapper {
-  background: radial-gradient(#610e0e, #1f1013) !important;
-  height: 100%;
-}
-
-/* Tv Page */
-.tv-list-wrapper {
-  height: 100% !important;
-  overflow-x: hidden;
-  background: radial-gradient(#610e0e, #1f1013) !important;
-}
-
-.tv-container {
-  z-index: 2;
-  position: relative;
-}
-
-/* Edit TV */
-
-Table {
-  border: 1px solid #ffffff !important;
-  position: relative;
-}
-
-.edit-input {
-  width: 150px;
-  font-size: 16px !important;
-  height: 40px;
-}
-
-.tv-edit-save-button {
-  margin-right: 10px !important;
-}
-
-td {
-  padding-top: 18px !important;
-}
-
-.tv-edit-save-delete-wrapper {
-  padding: 10px !important;
-  display: flex !important;
-  width: 100%;
-  justify-content: space-around;
-}
-
-/* Movie form */
-
-/* Add movie page */
-
-.movie-button-wrapper {
-  outline: 1px solid white !important;
-  margin-top: 20px !important;
-}
-
-.movie-add-button {
-  font-weight: bolder;
-}
-
-/* Movie List */
-.movie-list-wrapper {
-  height: 100% !important;
-  overflow-x: hidden;
-}
-
-.movie-edit-save-delete-wrapper {
-  padding: 10px !important;
-  display: flex !important;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.movie-edit-and-save-button {
-  margin-right: 10px !important;
-}
-
-/* if no items are in any of the list */
-.no-list-title-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 85vh;
-}
-
-.no-list-title {
-  font-size: 5rem;
-}
-
-/* Video game section */
-
-/* AddVideoGame */
-.add-video-game-wrapper {
-  background: radial-gradient(#23781e, #1f1013) !important;
-  /* overflow: scroll; */
-  overflow-x: hidden;
-  height: 100%;
-  top: 20px;
-}
-
-/* Movie form component */
-.form-wrapper-container {
-  position: relative;
-}
-
-/* Video game list  */
-
-.video-game-list-wrapper {
-  background: radial-gradient(#23781e, #1f1013) !important;
-  height: 100% !important;
-}
-
-.video-game-table-data {
-  position: relative;
-  bottom: 6px;
-}
-
-.video-game-edit-save-buutton {
-  margin-right: 20px;
-}
-
-.video-game-edit-input {
-  position: relative;
-  bottom: 5px !important;
-}
-
-.video-game-form-wrapper {
-  position: relative !important;
-  bottom: 250px !important;
-}
-
 /* Responsive  --------------------------------------------------------------- */
 
 @media screen and (max-width: 1025px) {
+  .title {
+    font-size: 45px;
+
+    top: 100px;
+  }
+
+  .title-subheading {
+    font-size: 30px;
+  }
+
+  .card-wrapper {
+    width: 90vw !important;
+  }
+
   .card-title {
-    font-size: 1.4rem;
-    padding-left: 10px;
-    text-align: center;
+    font-size: 18px;
+  }
+
+  .arrow-icon {
+    width: 30px;
   }
 }
 
 /* Larger screens / tablets */
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .title-subheading {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .card-wrapper {
     width: 95vw !important;
-
     display: flex;
   }
   .card-title {
-    font-size: 22px !important;
+    font-size: 16px !important;
   }
 
   .arrow-icon {
-    width: 40px !important;
+    width: 30px !important;
     margin-left: 30px;
-  }
-
-  .no-list-title {
-    font-size: 45px !important;
-  }
-
-  .edit-button {
-    position: relative;
-    right: 8px !important;
-    /* top: 0px !important; */
-  }
-
-  .save-button {
-    position: relative;
-    right: 8px !important;
-  }
-
-  /* Video game list  */
-  .video-game-edit-save-buutton {
-    position: relative;
-    left: 0px;
-    bottom: 5px;
-  }
-
-  .video-game-edit-save-buutton {
-    top: 0;
-  }
-
-  /* Add tv show page */
-  .add-tv-show-wrapper {
-    /* height: 100%; */
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  /* TV form component*/
-  .tv-form {
-    height: 100%;
-    position: relative;
-    bottom: 150px;
-  }
-
-  .form-title {
-    position: relative;
-    top: 20px;
-    font-size: 40px;
   }
 }
 
 /* Mobile Screens */
-
 @media screen and (max-width: 480px) {
   .layout-wrapper {
-    height: 100% !important;
+    height: 200vh !important;
   }
 
   /* Home Screen */
-
-  .home-wrapper {
-    position: relative;
-    top: 0;
+  #home {
+    height: 100% !important;
   }
 
   .title {
     font-size: 1.4rem;
-    bottom: -50px;
   }
 
   .title-subheading {
     font-size: 1.2rem;
-    bottom: -20px;
   }
 
   .cards {
@@ -608,124 +157,5 @@ td {
   .card-title {
     font-size: 18px !important;
     font-weight: bolder;
-  }
-
-  /* Tv List */
-
-  .tv-list-wrapper {
-    height: 100vh !important;
-  }
-
-  .no-list-title {
-    font-size: 30px !important;
-  }
-
-  th {
-    font-size: 18px !important;
-  }
-
-  td {
-    font-size: 18px !important;
-  }
-
-  .edit-button {
-    position: relative;
-    top: 0px !important;
-  }
-
-  .save-button {
-    position: relative;
-    top: -6px !important;
-  }
-
-  .tv-edit-button {
-    position: relative;
-  }
-
-  /* Mobie list */
-  .movie-list-wrapper {
-    height: 100vh !important;
-  }
-
-  /* Video game list  */
-
-  .video-game-list-wrapper {
-    height: 100vh !important;
-  }
-
-  .video-game-edit-save-delete-wrapper {
-    display: flex;
-  }
-
-  .video-game-edit-save-buutton {
-    display: flex !important;
-  }
-
-  .edit-button {
-    margin-right: 10px;
-  }
-
-  /* Forms */
-
-  /* TV Form */
-  .tv-form {
-    position: relative;
-    top: 0;
-  }
-
-  .add-tv-wrapper {
-    position: relative;
-    top: 0;
-  }
-
-  .row-wrapper {
-    margin-bottom: 50px !important;
-  }
-
-  .total-button-wrapper {
-    width: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px !;
-  }
-
-  .button-wrapper span {
-    font-size: 24px !important;
-    width: 100%;
-    font-weight: bold;
-  }
-
-  .add-tv-button-wrapper {
-    width: 100%;
-    position: absolute;
-  }
-
-  .add-tv-button {
-    position: relative;
-
-    width: 100%;
-  }
-
-  /* Movie form */
-  .add-movie-wrapper {
-    position: relative;
-    bottom: 30px;
-  }
-
-  /* Video game form */
-
-  .video-game-form-wrapper {
-    position: absolute;
-    top: 0px;
-  }
-
-  .game-form {
-    margin-bottom: 60px;
-  }
-
-  #buttons {
-    position: relative;
-    top: 0px !important;
   }
 }

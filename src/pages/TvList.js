@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import './TvList.css';
 
 const TvList = ({ tvListItem, setTvListItem, setShow }) => {
   useEffect(() => {
