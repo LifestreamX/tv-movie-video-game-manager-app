@@ -11,9 +11,9 @@ const HomePage = () => {
   return (
     <Container className=' d-flex flex-column justify-content-evenly align-items-center h-100 home-wrapper' id='home'>
       <Row className='home-title-section'>
-        <Col className='d-flex justify-content-center align-items-center flex-column'>
-          <h1 className='title'> TV | Movie | Video Game </h1>
-          <h2 className='title-subheading my-5'>List Manager </h2>
+        <Col className=''>
+          {/* <h1 className='title'> TV | Movie | Video Game </h1> */}
+          <h2 className='title-subheading my-5'>LIST MANAGER </h2>
         </Col>
       </Row>
       <Row className='home-row-card-wrapper'>
